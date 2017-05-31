@@ -31,6 +31,7 @@ body {
   -webkit-user-select: none;
   -ms-user-select: none;
   user-select: none;
+  white-space: nowrap;
 }
 
 .spiral-button-face-container {
