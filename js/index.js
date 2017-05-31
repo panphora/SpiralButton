@@ -38,6 +38,11 @@ $spiralButtonOuterCountainer.on("click", function (event) {
   tl.play();
 });
 
+$("form").on("submit", function (event) {
+  event.preventDefault();
+  tl.play();
+});
+
 
 
 
