@@ -23,7 +23,6 @@ body {
   position: relative;
   display: inline-block;
   overflow: hidden;
-  background: #ccc;
   padding-right: 7px;
   padding-bottom: 7px;
   cursor: pointer;
@@ -67,6 +66,8 @@ body {
   border-bottom: 2px solid #333;
   right: 0px;
   bottom: 0px;
+  background-color: #d4d4d4;
+  z-index: 2;
 }
 
 .spiral-button-bottom .invisible-text {
@@ -82,16 +83,21 @@ body {
 }
 
 .spiral-button-outer-container.pressed .spiral-button-face-container {
-  transform: translate(7px, 7px)
+  transform: translate(7px, 7px);
 }
 
 .spiral-button-outer-container.pressed .leg-top-right {
-  transform: translate(7px, 8px)
+  transform: translate(7px, 8px);
+}
+
+.spiral-button-outer-container.pressed .leg-bottom-right {
+  transform: translate(7px, 7px);
 }
 
 .spiral-button-outer-container.pressed .leg-bottom-left {
-  transform: translate(8px, 7px)
+  transform: translate(8px, 7px);
 }
+
 
 .leg-top-right {
   position: absolute;
@@ -102,12 +108,38 @@ body {
   transition: transform .3s;
 }
 
+.leg-top-right-bg {
+  fill:#d4d4d4;
+} 
+
+.leg-bottom-left-bg {
+  fill:#d4d4d4;
+} 
+
+/* selected */
+
+.spiral-button-outer-container.selected .leg-top-right-bg {
+  fill: #badefb;
+}
+
+.spiral-button-outer-container.selected .leg-bottom-left-bg {
+  fill: #badefb;
+}
+
+.spiral-button-outer-container.selected .spiral-button-bottom {
+  background-color: #badefb;
+}
+
+
+
 .leg-bottom-right {
   position: absolute;
-  bottom: 0;
-  right: 0;
+  bottom: -14px;
+  right: -14px;
   width: 23px;
   height: 23px;
+  z-index: 3;
+  transition: transform .3s;
 }
 
 .leg-bottom-left {
@@ -129,7 +161,11 @@ body {
 }
 
 
-
+.toggle-selected {
+  float: right;
+  margin-top: -50px;
+  margin-right: -50px;
+}
 
 
 

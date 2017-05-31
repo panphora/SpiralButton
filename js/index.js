@@ -1,4 +1,14 @@
-var tl = new TimelineMax({visibility: "hidden", paused:true});
+var tl = new TimelineMax({
+  visibility: "hidden", 
+  paused: true,
+  onComplete: function () {
+    $(".spiral-button-outer-container").removeClass("pressed");
+
+    tl
+      .pause()
+      .progress(0);
+  }
+});
 
 tl
 .to(".spiral-bg", .2, {transformOrigin: "50% 50%", visibility: "visible"})
@@ -16,6 +26,10 @@ function goSpiral () {
 
 
 $(".spiral-button-outer-container").on("click", function (event) {
-  $(event.currentTarget).toggleClass("pressed");
+  $(event.currentTarget).addClass("pressed");
   goSpiral();
+});
+
+$(".toggle-selected").on("click", function () {
+  $(".spiral-button-outer-container").toggleClass("selected");
 });
