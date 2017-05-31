@@ -32,6 +32,7 @@ body {
   -ms-user-select: none;
   user-select: none;
   white-space: nowrap;
+  font-size: 1rem;
 }
 
 .spiral-button-face-container {
@@ -117,20 +118,6 @@ body {
   fill:#d4d4d4;
 } 
 
-/* selected */
-
-.spiral-button-outer-container.selected .leg-top-right-bg {
-  fill: #badefb;
-}
-
-.spiral-button-outer-container.selected .leg-bottom-left-bg {
-  fill: #badefb;
-}
-
-.spiral-button-outer-container.selected .spiral-button-bottom {
-  background-color: #badefb;
-}
-
 
 
 .leg-bottom-right {
@@ -162,12 +149,43 @@ body {
 }
 
 
-.toggle-selected {
-  float: right;
-  margin-top: -50px;
-  margin-right: -50px;
+
+/* BUTTONS */
+
+button.spiral-button {
+  background: none;
+  border: 0;
+  color: inherit;
+  font: inherit;
+  font-size: 0;
+  line-height: normal;
+  overflow: visible;
+  padding: 0;
+  -webkit-appearance: button; /* for input */
+  -webkit-user-select: none; /* for button */
+  -moz-user-select: none;
+  -ms-user-select: none;
+  outline: none;
 }
 
+/* selected */
+
+button.spiral-button:focus .leg-top-right-bg, button.spiral-button:active .leg-top-right-bg {
+  fill: #cee3f5;
+}
+
+button.spiral-button:focus .leg-bottom-left-bg, button.spiral-button:active .leg-bottom-left-bg {
+  fill: #cee3f5;
+}
+
+button.spiral-button:focus .spiral-button-bottom, button.spiral-button:active .spiral-button-bottom {
+  background-color: #cee3f5;
+}
+
+button.spiral-button::-moz-focus-inner {
+  border: 0;
+  padding: 0;
+}
 
 
 

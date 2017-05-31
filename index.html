@@ -8,40 +8,41 @@
 </head>
 <body>
     <div class="container">
-      <button class="toggle-selected">selected</button>
-      <div class="spiral-button-outer-container">
-        <div class="spiral-button-face-container">
-          <span class="spiral-button-main-text">Send</span>
-          <div class="spiral-button-face-background-container">
-            <img class="spiral-bg" src="img/spiral-bg.svg">
+      <button class="spiral-button">
+        <div class="spiral-button-outer-container">
+          <div class="spiral-button-face-container">
+            <span class="spiral-button-main-text">Send</span>
+            <div class="spiral-button-face-background-container">
+              <img class="spiral-bg" src="img/spiral-bg.svg">
+            </div>
+          </div>
+          <div class="spiral-button-bottom">
+            <span class="invisible-text">Send</span>
+          </div>
+          <div class="leg-container">
+            <svg class="leg-top-right" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 22.4 23.9">
+              <style>
+                .st1{stroke:#333333;stroke-width:2;stroke-linecap:round;stroke-miterlimit:10;}
+              </style>
+              <path class="leg-top-right-bg" d="M0 1v22.9h21.4v-1L1 1z"/>
+              <path class="st1" d="M1 1l20.4 21.9"/>
+            </svg>
+            <svg class="leg-bottom-right" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 23.1 23.1">
+              <style>
+                .st0{fill:none;stroke:#333333;stroke-width:2;stroke-linecap:round;stroke-miterlimit:10;}
+              </style>
+              <path class="st0" d="M1 1l21.1 21.1"/>
+            </svg>
+            <svg class="leg-bottom-left" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 23.8 22.4">
+              <style>
+                .st1{stroke:#333333;stroke-width:2;stroke-linecap:round;stroke-miterlimit:10;}
+              </style>
+              <path class="leg-bottom-left-bg" d="M1 0h22.8v21.4h-1L1 1z"/>
+              <path class="st1" d="M1 1l21.8 20.4"/>
+            </svg>
           </div>
         </div>
-        <div class="spiral-button-bottom">
-          <span class="invisible-text">Send</span>
-        </div>
-        <div class="leg-container">
-          <svg class="leg-top-right" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 22.4 23.9">
-            <style>
-              .st1{stroke:#333333;stroke-width:2;stroke-linecap:round;stroke-miterlimit:10;}
-            </style>
-            <path class="leg-top-right-bg" d="M0 1v22.9h21.4v-1L1 1z"/>
-            <path class="st1" d="M1 1l20.4 21.9"/>
-          </svg>
-          <svg class="leg-bottom-right" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 23.1 23.1">
-            <style>
-              .st0{fill:none;stroke:#333333;stroke-width:2;stroke-linecap:round;stroke-miterlimit:10;}
-            </style>
-            <path class="st0" d="M1 1l21.1 21.1"/>
-          </svg>
-          <svg class="leg-bottom-left" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 23.8 22.4">
-            <style>
-              .st1{stroke:#333333;stroke-width:2;stroke-linecap:round;stroke-miterlimit:10;}
-            </style>
-            <path class="leg-bottom-left-bg" d="M1 0h22.8v21.4h-1L1 1z"/>
-            <path class="st1" d="M1 1l21.8 20.4"/>
-          </svg>
-        </div>
-      </div>
+      </button>
     </div>
 
     <script src='https://s3-us-west-2.amazonaws.com/s.cdpn.io/126441/jquery.min.js'></script>

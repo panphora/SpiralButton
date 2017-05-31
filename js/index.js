@@ -1,6 +1,7 @@
 // initialize elements
 var $spiralButtonFaceContainer = $(".spiral-button-face-container");
 var $spiralButtonOuterCountainer = $(".spiral-button-outer-container");
+var spiralButtonOuterCountainerElem = $spiralButtonOuterCountainer.get(0);
 var $spiralBg = $(".spiral-bg");
 var spiralBgElem = $spiralBg.get(0);
 
@@ -23,8 +24,10 @@ var tl = new TimelineMax({
 });
 
 tl
+  .to(spiralButtonOuterCountainerElem, 0, {className: "-=pressed"})
   .to(spiralBgElem, 0, {visibility: "hidden"})
   .to(spiralBgElem, 0, {transformOrigin: "50% 50%", visibility: "visible"})
+  .to(spiralButtonOuterCountainerElem, 0, {className: "+=pressed"})
   .to(spiralBgElem, 1.5, {rotation: "-200", ease: Power0.easeNone})
   .to(spiralBgElem, 1.5, {scale: spiralScaleValue, ease: Power1.easeIn}, "-=1.5")
   .to(spiralBgElem, 0, {visibility: "hidden"})
@@ -32,14 +35,9 @@ tl
 
 
 $spiralButtonOuterCountainer.on("click", function (event) {
-  $(event.currentTarget).addClass("pressed");
   tl.play();
 });
 
-
-$(".toggle-selected").on("click", function () {
-  $(".spiral-button-outer-container").toggleClass("selected");
-});
 
 
 
