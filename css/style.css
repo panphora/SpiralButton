@@ -1,0 +1,120 @@
+html {
+  box-sizing: border-box;
+}
+*, *:before, *:after {
+  box-sizing: inherit;
+}
+
+body {
+  font-family: 'NotoSans', sans-serif;
+  font-size: 16px;
+  font-weight: bold;
+}
+
+.container {
+  margin: 50px auto;
+  width: 400px;
+  padding: 4rem;
+  border: 1px solid #000;
+  min-height: 400px;
+}
+
+.spiral-button-outer-container {
+  position: relative;
+  display: inline-block;
+  overflow: hidden;
+  background: #ccc;
+  padding-right: 7px;
+  padding-bottom: 7px;
+  cursor: pointer;
+  -moz-user-select: none;
+  -khtml-user-select: none;
+  -webkit-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+.spiral-button-face-container {
+  position: relative;
+  display: inline-block;
+  padding: .55rem 1.1rem .65rem;
+  border: 2px solid #333;
+  background-color: #ffffff;
+  z-index: 3;
+  transition: transform .3s;
+}
+
+.spiral-button-face-background-container {
+
+}
+
+.spiral-button-bottom {
+  position: absolute;
+  display: inline-block;
+  padding: .55rem 1.1rem .65rem;
+  border-right: 2px solid #333;
+  border-bottom: 2px solid #333;
+  right: 0px;
+  bottom: 0px;
+}
+
+.spiral-button-bottom .invisible-text {
+  visibility: hidden;
+}
+
+.leg-container {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.spiral-button-outer-container.pressed .spiral-button-face-container {
+  transform: translate(7px, 7px)
+}
+
+.spiral-button-outer-container.pressed .leg-top-right {
+  transform: translate(7px, 8px)
+}
+
+.spiral-button-outer-container.pressed .leg-bottom-left {
+  transform: translate(8px, 7px)
+}
+
+.leg-top-right {
+  position: absolute;
+  top: 1px;
+  right: -14px;
+  width: 23px;
+  height: 23px;
+  transition: transform .3s;
+}
+
+.leg-bottom-right {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  width: 23px;
+  height: 23px;
+}
+
+.leg-bottom-left {
+  position: absolute;
+  bottom: -14px;
+  left: 1px;
+  width: 23px;
+  height: 23px;
+  transition: transform .3s;
+}
+
+
+
+
+
+
+
+
+
+
+
