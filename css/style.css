@@ -168,24 +168,26 @@ button.spiral-button {
   outline: none;
 }
 
-/* selected */
-
-button.spiral-button:focus .leg-top-right-bg, button.spiral-button:active .leg-top-right-bg {
-  fill: #cee3f5;
-}
-
-button.spiral-button:focus .leg-bottom-left-bg, button.spiral-button:active .leg-bottom-left-bg {
-  fill: #cee3f5;
-}
-
-button.spiral-button:focus .spiral-button-bottom, button.spiral-button:active .spiral-button-bottom {
-  background-color: #cee3f5;
-}
-
 button.spiral-button::-moz-focus-inner {
   border: 0;
   padding: 0;
 }
+
+/* focus/active styles */
+
+// button.spiral-button:focus .leg-top-right-bg, button.spiral-button:active .leg-top-right-bg {
+//   fill: #cee3f5;
+// }
+
+// button.spiral-button:focus .leg-bottom-left-bg, button.spiral-button:active .leg-bottom-left-bg {
+//   fill: #cee3f5;
+// }
+
+// button.spiral-button:focus .spiral-button-bottom, button.spiral-button:active .spiral-button-bottom {
+//   background-color: #cee3f5;
+// }
+
+
 
 
 
