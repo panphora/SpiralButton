@@ -7,8 +7,9 @@ var formElement = document.querySelector("form");
 var spiralBgElem = document.querySelector(".spiral-bg");
 var spiralButtonFaceContainerElem = document.querySelector(".spiral-button-face-container");
 var spiralButtonFaceOuterWidth = spiralButtonFaceContainerElem.offsetWidth;
-// desiredTunnelExitWidth will range from 100px to about 400px
+// desiredTunnelExitWidth will probably range from 100px to about 400px
 var desiredTunnelExitWidth = spiralButtonFaceOuterWidth + 28;
+// initialSpiralBgWidth will probably range from 4.4px to 17.8px
 var initialSpiralBgWidth = (desiredTunnelExitWidth * (20/3)) / 150;
 
 // set initial width of spiral so it adapts to text size
