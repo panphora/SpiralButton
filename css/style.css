@@ -54,17 +54,13 @@ body {
 
 .spiral-button-bottom {
   position: absolute;
-  display: inline-block;
-  padding: .55rem 1.1rem .65rem;
-  border-right: 2px solid #333;
-  border-bottom: 2px solid #333;
   right: 0px;
   bottom: 0px;
+  width: calc(100% - 9px);
+  height: calc(100% - 9px);
+  border-right: 2px solid #333;
+  border-bottom: 2px solid #333;
   background-color: #d4d4d4;
-}
-
-.spiral-button-bottom .invisible-text {
-  visibility: hidden;
 }
 
 .leg-container {
