@@ -1,47 +1,20 @@
+
+
 // initialize elements
-var $spiralButton = $(".spiral-button");
-var spiralButtonElem = $spiralButton.get(0);
-var $spiralButtonFaceContainer = $(".spiral-button-face-container");
-var $spiralButtonOuterCountainer = $(".spiral-button-outer-container");
-var spiralButtonOuterCountainerElem = $spiralButtonOuterCountainer.get(0);
-var $spiralBg = $(".spiral-bg");
-var spiralBgElem = $spiralBg.get(0);
+var spiralButtonElem = document.querySelector(".spiral-button");
+var spiralBgElem = document.querySelector(".spiral-bg");
+var formElement = document.querySelector("form");
+var spiralButtonFaceContainerElem = document.querySelector(".spiral-button-face-container");
+// spiral grow init
+var spiralButtonFaceOuterWidth = spiralButtonFaceContainerElem.offsetWidth;
+var tunnelExitWidth = Math.round(spiralButtonFaceOuterWidth) + 28;
+var spiralScaleValue = Math.round(tunnelExitWidth * (4/3));
 
-// initialize scale value
-var spiralButtonFaceOuterWidth = $spiralButtonFaceContainer.outerWidth();
-var endOfTunnelWidth = Math.round(spiralButtonFaceOuterWidth) + 28;
-var spiralScaleValue = Math.round(endOfTunnelWidth * (4/3));
-
-var tl = new TimelineMax({
-  visibility: "hidden", 
-  paused: true,
-  onComplete: function () {
-    $spiralButtonOuterCountainer.removeClass("pressed");
-    $spiralBg.css("visibility", "hidden");
-
-    tl
-      .pause()
-      .progress(0);
-  }
+spiralBgElem.onCSSAnimationEnd(function () {
+  spiralButtonElem.classList.remove("pressed");
 });
 
-tl
-  .to(spiralButtonOuterCountainerElem, 0, {className: "-=pressed"})
-  .to(spiralBgElem, 0, {visibility: "hidden"})
-  .to(spiralBgElem, 0, {transformOrigin: "50% 50%", visibility: "visible"})
-  .to(spiralButtonOuterCountainerElem, 0, {className: "+=pressed"})
-  .to(spiralBgElem, 1.5, {rotation: "-200", ease: Power0.easeNone})
-  .to(spiralBgElem, 1.5, {scale: spiralScaleValue, ease: Power1.easeIn}, "-=1.5")
-  .to(spiralBgElem, 0, {visibility: "hidden"})
-  .progress(1).progress(0);
-
-
-
-$("form").on("submit", function (event) {
+formElement.addEventListener("submit", function (event) {
   event.preventDefault();
-  tl.play();
+  spiralButtonElem.classList.add("pressed");
 });
-
-
-
-

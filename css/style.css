@@ -32,7 +32,7 @@ body {
 .spiral-button-face-container {
   position: relative;
   display: inline-block;
-  padding: .55rem 1.1rem .65rem;
+  padding: .48rem 1rem .52rem;
   border: 2px solid #333;
   background-color: #ffffff;
   transition: transform .3s;
@@ -107,7 +107,6 @@ body {
 .spiral-bg {
   visibility: hidden;
   height: 5px;
-
   /* center vertically and horizontally */
   position: absolute;
   top: 50%;
@@ -158,24 +157,36 @@ button.spiral-button:focus .spiral-button-bottom, button.spiral-button:active .s
   transition: transform .3s;
 }
 
-.spiral-button-outer-container.pressed .spiral-button-face-container {
+.spiral-button.pressed .spiral-button-face-container {
   transform: translate(7px, 7px);
 }
 
-.spiral-button-outer-container.pressed .leg-top-right .contents {
+.spiral-button.pressed .leg-top-right .contents {
   transform: translate(7px, 9px);
 }
 
-.spiral-button-outer-container.pressed .leg-bottom-right .contents {
+.spiral-button.pressed .leg-bottom-right .contents {
   transform: translate(7px, 7px);
 }
 
-.spiral-button-outer-container.pressed .leg-bottom-left .contents {
+.spiral-button.pressed .leg-bottom-left .contents {
   transform: translate(9px, 7px);
 }
 
+.spiral-button.pressed .spiral-bg {
+  visibility: visible;
+  animation: rotateSpiral 1.5s linear, growSpiral 1.5s cubic-bezier(0.55, 0.085, 0.68, 0.53);
+}
 
+@keyframes rotateSpiral {
+  from {transform: rotate(0);}
+  to {transform: rotate(-200deg);}
+}
 
+@keyframes growSpiral {
+  from {transform: scale(0);}
+  to {transform: scale(140);}
+}
 
 
 
