@@ -133,10 +133,10 @@ body {
 
 .leg-bottom-left {
   position: absolute;
-  bottom: -.2px;
+  bottom: 0px;
   left: 0px;
   width: 10.2px;
-  height: 8.6px;
+  height: 8.8px;
   transition: transform .3s;
 }
 
