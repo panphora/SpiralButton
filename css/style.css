@@ -89,7 +89,7 @@ body {
 }
 
 .spiral-button-outer-container.pressed .leg-top-right {
-  transform: translate(7px, 8px);
+  transform: translate(7px, 9px);
 }
 
 .spiral-button-outer-container.pressed .leg-bottom-right {
@@ -97,18 +97,11 @@ body {
 }
 
 .spiral-button-outer-container.pressed .leg-bottom-left {
-  transform: translate(8px, 7px);
+  transform: translate(9px, 7px);
 }
 
 
-.leg-top-right {
-  position: absolute;
-  top: 1px;
-  right: -14px;
-  width: 23px;
-  height: 23px;
-  transition: transform .3s;
-}
+
 
 .leg-top-right-bg {
   fill:#d4d4d4;
@@ -119,6 +112,14 @@ body {
 } 
 
 
+.leg-top-right {
+  position: absolute;
+  top: 0px;
+  right: -.3px;
+  width: 8.8px;
+  height: 10.2px;
+  transition: transform .3s;
+}
 
 .leg-bottom-right {
   position: absolute;
@@ -132,10 +133,10 @@ body {
 
 .leg-bottom-left {
   position: absolute;
-  bottom: -14px;
-  left: 1px;
-  width: 23px;
-  height: 23px;
+  bottom: -.2px;
+  left: 0px;
+  width: 10.2px;
+  height: 8.6px;
   transition: transform .3s;
 }
 
