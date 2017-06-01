@@ -22,7 +22,6 @@ body {
 .spiral-button-outer-container {
   position: relative;
   display: inline-block;
-  overflow: hidden;
   padding-right: 7px;
   padding-bottom: 7px;
   cursor: pointer;
@@ -84,33 +83,14 @@ body {
   height: 100%;
 }
 
-.spiral-button-outer-container.pressed .spiral-button-face-container {
-  transform: translate(7px, 7px);
-}
-
-.spiral-button-outer-container.pressed .leg-top-right {
-  transform: translate(7px, 9px);
-}
-
-.spiral-button-outer-container.pressed .leg-bottom-right {
-  transform: translate(7px, 7px);
-}
-
-.spiral-button-outer-container.pressed .leg-bottom-left {
-  transform: translate(9px, 7px);
-}
-
-
-
-
+/*
 .leg-top-right-bg {
   fill:#d4d4d4;
 } 
 
 .leg-bottom-left-bg {
   fill:#d4d4d4;
-} 
-
+} */
 
 .leg-top-right {
   position: absolute;
@@ -118,17 +98,15 @@ body {
   right: -.3px;
   width: 8.8px;
   height: 10.2px;
-  transition: transform .3s;
 }
 
 .leg-bottom-right {
   position: absolute;
-  bottom: -14px;
-  right: -14px;
-  width: 23px;
-  height: 23px;
+  bottom: 0px;
+  right: 0px;
+  width: 8.8px;
+  height: 8.8px;
   z-index: 3;
-  transition: transform .3s;
 }
 
 .leg-bottom-left {
@@ -137,13 +115,14 @@ body {
   left: 0px;
   width: 10.2px;
   height: 8.8px;
-  transition: transform .3s;
 }
 
 .spiral-bg {
   visibility: hidden;
-  position: absolute;
   height: 5px;
+
+  /* center vertically and horizontally */
+  position: absolute;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
@@ -189,6 +168,28 @@ button.spiral-button::-moz-focus-inner {
 // }
 
 
+
+/* PRESSED ANIMATION */
+
+.leg .contents {
+  transition: transform .3s;
+}
+
+.spiral-button-outer-container.pressed .spiral-button-face-container {
+  transform: translate(7px, 7px);
+}
+
+.spiral-button-outer-container.pressed .leg-top-right .contents {
+  transform: translate(8px, 9px);
+}
+
+.spiral-button-outer-container.pressed .leg-bottom-right .contents {
+  transform: translate(8px, 8px);
+}
+
+.spiral-button-outer-container.pressed .leg-bottom-left .contents {
+  transform: translate(9px, 8px);
+}
 
 
 
