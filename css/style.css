@@ -1,8 +1,10 @@
 html {
-  box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
 }
 *, *:before, *:after {
-  box-sizing: inherit;
+  -webkit-box-sizing: inherit;
+          box-sizing: inherit;
 }
 
 body {
@@ -24,7 +26,6 @@ body {
   display: inline-block;
   padding-right: 7px;
   padding-bottom: 7px;
-  cursor: pointer;
   white-space: nowrap;
   font-size: 1rem;
 }
@@ -34,8 +35,12 @@ body {
   display: inline-block;
   padding: .48rem 1rem .52rem;
   border: 2px solid #333;
+  line-height: 1.4em;
   background-color: #ffffff;
+  -webkit-transition: -webkit-transform .3s;
+  transition: -webkit-transform .3s;
   transition: transform .3s;
+  transition: transform .3s, -webkit-transform .3s;
 }
 
 .spiral-button-main-text {
@@ -102,7 +107,8 @@ body {
   position: absolute;
   top: 45%;
   left: 50%;
-  transform: translate(-50%, -50%);
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
 }
 
 
@@ -119,15 +125,18 @@ button.spiral-button {
   overflow: visible;
   padding: 0;
   -moz-user-select: none;
-  -khtml-user-select: none;
   -webkit-user-select: none;
   -ms-user-select: none;
   user-select: none;
   outline: none;
+  cursor: pointer;
 }
 
 button.spiral-button .spiral-button-bottom {
+  -webkit-transition: -webkit-box-shadow .2s;
+  transition: -webkit-box-shadow .2s;
   transition: box-shadow .2s;
+  transition: box-shadow .2s, -webkit-box-shadow .2s;
 }
 
 button.spiral-button::-moz-focus-inner {
@@ -138,54 +147,98 @@ button.spiral-button::-moz-focus-inner {
 /* FOCUS/ACTIVE STYLES */
 
 button.spiral-button:focus .spiral-button-bottom, button.spiral-button:active .spiral-button-bottom {
-  box-shadow: 0px 0px 8px rgba(33,150,243,.7), 0px 0px 22px rgba(33,150,243,.3);
+  -webkit-box-shadow: 0px 0px 8px rgba(33,150,243,.7), 0px 0px 22px rgba(33,150,243,.3);
+          box-shadow: 0px 0px 8px rgba(33,150,243,.7), 0px 0px 22px rgba(33,150,243,.3);
 }
 
 
 /* PRESSED ANIMATION */
 
 .leg .contents {
+  -webkit-transition: -webkit-transform .3s;
+  transition: -webkit-transform .3s;
   transition: transform .3s;
+  transition: transform .3s, -webkit-transform .3s;
 }
 
 .spiral-button.pressed .spiral-button-face-container {
-  transform: translate(7px, 7px);
+  -webkit-transform: translate(7px, 7px);
+          transform: translate(7px, 7px);
 }
 
 .spiral-button.pressed .leg-top-right .contents {
-  transform: translate(7px, 9px);
+  -webkit-transform: translate(7px, 9px);
+          transform: translate(7px, 9px);
 }
 
 .spiral-button.pressed .leg-bottom-right .contents {
-  transform: translate(7px, 7px);
+  -webkit-transform: translate(7px, 7px);
+          transform: translate(7px, 7px);
 }
 
 .spiral-button.pressed .leg-bottom-left .contents {
-  transform: translate(9px, 7px);
+  -webkit-transform: translate(9px, 7px);
+          transform: translate(9px, 7px);
 }
 
 .spiral-button.pressed .spiral-bg {
   visibility: visible;
-  animation: rotateSpiral 1.5s linear, growSpiral 1.5s cubic-bezier(0.55, 0.085, 0.68, 0.53);
+  -webkit-animation: rotateSpiral 1.5s linear, growSpiral 1.5s cubic-bezier(0.55, 0.085, 0.68, 0.53);
+          animation: rotateSpiral 1.5s linear, growSpiral 1.5s cubic-bezier(0.55, 0.085, 0.68, 0.53);
+}
+
+@-webkit-keyframes rotateSpiral {
+  from {
+    -webkit-transform: rotate(0);
+            transform: rotate(0);
+  }
+  to {
+    -webkit-transform: rotate(-200deg);
+            transform: rotate(-200deg);
+  }
 }
 
 @keyframes rotateSpiral {
   from {
-    transform: rotate(0);
+    -webkit-transform: rotate(0);
+            transform: rotate(0);
   }
   to {
-    transform: rotate(-200deg);
+    -webkit-transform: rotate(-200deg);
+            transform: rotate(-200deg);
+  }
+}
+
+@-webkit-keyframes growSpiral {
+  from {
+    -webkit-transform: scale(0);
+            transform: scale(0);
+  }
+  to {
+    -webkit-transform: scale(150);
+            transform: scale(150);
   }
 }
 
 @keyframes growSpiral {
   from {
-    transform: scale(0);
+    -webkit-transform: scale(0);
+            transform: scale(0);
   }
   to {
-    transform: scale(150);
+    -webkit-transform: scale(150);
+            transform: scale(150);
   }
 }
+
+
+
+
+
+
+
+
+
 
 
 
