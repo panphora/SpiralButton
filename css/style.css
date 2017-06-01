@@ -25,11 +25,6 @@ body {
   padding-right: 7px;
   padding-bottom: 7px;
   cursor: pointer;
-  -moz-user-select: none;
-  -khtml-user-select: none;
-  -webkit-user-select: none;
-  -ms-user-select: none;
-  user-select: none;
   white-space: nowrap;
   font-size: 1rem;
 }
@@ -40,13 +35,11 @@ body {
   padding: .55rem 1.1rem .65rem;
   border: 2px solid #333;
   background-color: #ffffff;
-  z-index: 3;
   transition: transform .3s;
 }
 
 .spiral-button-main-text {
   position: relative;
-  z-index: 4;
   text-shadow: rgb(255, 255, 255) 1.5px 0px 0px, rgb(255, 255, 255) 1.17883px 0.927555px 0px, rgb(255, 255, 255) 0.352856px 1.45791px 0px, rgb(255, 255, 255) -0.62422px 1.36395px 0px, rgb(255, 255, 255) -1.33399px 0.685909px 0px, rgb(255, 255, 255) -1.47251px -0.285852px 0px, rgb(255, 255, 255) -0.980465px -1.1352px 0px, rgb(255, 255, 255) -0.0685596px -1.49843px 0px, rgb(255, 255, 255) 0.872705px -1.21999px 0px, rgb(255, 255, 255) 1.44026px -0.419123px 0px;
 }
 
@@ -68,7 +61,6 @@ body {
   right: 0px;
   bottom: 0px;
   background-color: #d4d4d4;
-  z-index: 2;
 }
 
 .spiral-button-bottom .invisible-text {
@@ -106,7 +98,6 @@ body {
   right: 0px;
   width: 8.8px;
   height: 8.8px;
-  z-index: 3;
 }
 
 .leg-bottom-left {
@@ -141,11 +132,16 @@ button.spiral-button {
   line-height: normal;
   overflow: visible;
   padding: 0;
-  -webkit-appearance: button; /* for input */
-  -webkit-user-select: none; /* for button */
   -moz-user-select: none;
+  -khtml-user-select: none;
+  -webkit-user-select: none;
   -ms-user-select: none;
+  user-select: none;
   outline: none;
+}
+
+button.spiral-button .spiral-button-bottom {
+  transition: box-shadow .2s;
 }
 
 button.spiral-button::-moz-focus-inner {
@@ -153,20 +149,11 @@ button.spiral-button::-moz-focus-inner {
   padding: 0;
 }
 
-/* focus/active styles */
+/* FOCUS/ACTIVE STYLES */
 
-// button.spiral-button:focus .leg-top-right-bg, button.spiral-button:active .leg-top-right-bg {
-//   fill: #cee3f5;
-// }
-
-// button.spiral-button:focus .leg-bottom-left-bg, button.spiral-button:active .leg-bottom-left-bg {
-//   fill: #cee3f5;
-// }
-
-// button.spiral-button:focus .spiral-button-bottom, button.spiral-button:active .spiral-button-bottom {
-//   background-color: #cee3f5;
-// }
-
+button.spiral-button:focus .spiral-button-bottom, button.spiral-button:active .spiral-button-bottom {
+  box-shadow: 0px 0px 8px rgba(33,150,243,.7), 0px 0px 22px rgba(33,150,243,.3);
+}
 
 
 /* PRESSED ANIMATION */
@@ -180,15 +167,15 @@ button.spiral-button::-moz-focus-inner {
 }
 
 .spiral-button-outer-container.pressed .leg-top-right .contents {
-  transform: translate(8px, 9px);
+  transform: translate(7px, 9px);
 }
 
 .spiral-button-outer-container.pressed .leg-bottom-right .contents {
-  transform: translate(8px, 8px);
+  transform: translate(7px, 7px);
 }
 
 .spiral-button-outer-container.pressed .leg-bottom-left .contents {
-  transform: translate(9px, 8px);
+  transform: translate(9px, 7px);
 }
 
 

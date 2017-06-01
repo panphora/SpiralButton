@@ -26,7 +26,6 @@ var tl = new TimelineMax({
 });
 
 tl
-  .to(spiralButtonElem, 0, {attr: {disabled: true} })
   .to(spiralButtonOuterCountainerElem, 0, {className: "-=pressed"})
   .to(spiralBgElem, 0, {visibility: "hidden"})
   .to(spiralBgElem, 0, {transformOrigin: "50% 50%", visibility: "visible"})
@@ -37,15 +36,11 @@ tl
   .progress(1).progress(0);
 
 
-$spiralButtonOuterCountainer.on("click", function (event) {
+
+$("form").on("submit", function (event) {
+  event.preventDefault();
   tl.play();
 });
-
-// $("form").on("submit", function (event) {
-//   console.log(123);
-//   event.preventDefault();
-//   tl.play();
-// });
 
 
 
