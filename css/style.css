@@ -71,19 +71,10 @@ body {
   height: 100%;
 }
 
-/*
-.leg-top-right-bg {
-  fill:#d4d4d4;
-} 
-
-.leg-bottom-left-bg {
-  fill:#d4d4d4;
-} */
-
 .leg-top-right {
   position: absolute;
   top: 0px;
-  right: -.3px;
+  right: 0px;
   width: 8.8px;
   height: 10.2px;
 }
