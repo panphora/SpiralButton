@@ -7,31 +7,19 @@ var formElement = document.querySelector("form");
 var spiralBgElem = document.querySelector(".spiral-bg");
 var spiralButtonFaceContainerElem = document.querySelector(".spiral-button-face-container");
 var spiralButtonFaceOuterWidth = spiralButtonFaceContainerElem.offsetWidth;
-var tunnelExitWidth = Math.round(spiralButtonFaceOuterWidth) + 28;
-var spiralScaleValue = Math.round(tunnelExitWidth * (4/3));
+// desiredTunnelExitWidth will range from 100px to about 400px
+var desiredTunnelExitWidth = spiralButtonFaceOuterWidth + 28;
+var initialSpiralBgWidth = (desiredTunnelExitWidth * (20/3)) / 150;
 
-var animation = anime({
-  autoplay: false,
-  targets: spiralBgElem,
-  scale: {
-    value: spiralScaleValue,
-    duration: 1500,
-    easing: "easeInQuad"
-  },
-  rotate: {
-    value: "-200deg",
-    duration: 1500,
-    easing: "linear"
-  },
-  begin: function () {
-    spiralButtonElem.classList.add("pressed");
-  },
-  complete: function (anim) {
-    spiralButtonElem.classList.remove("pressed");
-  }
+// set initial width of spiral so it adapts to text size
+spiralBgElem.style.width = initialSpiralBgWidth + "px";
+spiralBgElem.style.height = initialSpiralBgWidth + "px";
+
+spiralBgElem.onCSSAnimationEnd(function () {
+  spiralButtonElem.classList.remove("pressed");
 });
 
 formElement.addEventListener("submit", function (event) {
   event.preventDefault();
-  animation.restart();
+  spiralButtonElem.classList.add("pressed");
 });

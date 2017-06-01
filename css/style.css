@@ -175,4 +175,27 @@ button.spiral-button:focus .spiral-button-bottom, button.spiral-button:active .s
 
 .spiral-button.pressed .spiral-bg {
   visibility: visible;
+  animation: rotateSpiral 1.5s linear, growSpiral 1.5s cubic-bezier(0.55, 0.085, 0.68, 0.53);
 }
+
+@keyframes rotateSpiral {
+  from {
+    transform: rotate(0);
+  }
+  to {
+    transform: rotate(-200deg);
+  }
+}
+
+@keyframes growSpiral {
+  from {
+    transform: scale(0);
+  }
+  to {
+    transform: scale(150);
+  }
+}
+
+
+
+
