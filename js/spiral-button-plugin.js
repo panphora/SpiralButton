@@ -1,9 +1,10 @@
 function SpiralButton (options) {
   var buttonElement = options.buttonElement;
   var buttonText = options.buttonText;
-  var onCompleteCallback = options.onComplete;
-  var onStartCallback = options.onStart;
+  var onComplete = options.onComplete;
+  var onStart = options.onStart;
   var colorScheme = options.colorScheme;
+  var returnObjectMethods = {};
 
 
   // Create inner HTML for button
@@ -24,7 +25,7 @@ function SpiralButton (options) {
 
 
   // Apply color scheme
-  
+
   if (!colorScheme) {
     colorScheme = "default";
   }
@@ -81,20 +82,32 @@ function SpiralButton (options) {
     if (event && event.animationName === "growSpiral") {
       buttonElement.classList.remove("pressed");
 
-      if (onCompleteCallback) {
-        onCompleteCallback(buttonElement);
+      if (onComplete) {
+        onComplete(buttonElement);
+      }
+
+      if (returnObjectMethods.onComplete) {
+        returnObjectMethods.onComplete(buttonElement);
       }
     }
   });
 
   buttonElement.addEventListener("click", function (event) {
     event.preventDefault();
+    onButtonClick();
+  });
+
+  function onButtonClick () {
     buttonElement.classList.add("pressed");
 
-    if (onStartCallback) {
-      onStartCallback(buttonElement);
+    if (onStart) {
+      onStart(buttonElement);
     }
-  });
+
+    if (returnObjectMethods.onStart) {
+      returnObjectMethods.onStart(buttonElement);
+    }
+  }
 
 
   // Utility functions
@@ -103,4 +116,24 @@ function SpiralButton (options) {
     element.addEventListener('webkitAnimationEnd', callback);
     element.addEventListener('animationend', callback);
   }
+
+
+  // return value
+
+  return {
+    buttonElement: buttonElement,
+    onComplete: function (onCompleteFromReturnObject) {
+      returnObjectMethods.onComplete = onCompleteFromReturnObject;
+    },
+    onStart: function (onStartFromReturnObject) {
+      returnObjectMethods.onStart = onStartFromReturnObject;
+    },
+    triggerClick: onButtonClick
+  };
 }
+
+
+
+
+
+
