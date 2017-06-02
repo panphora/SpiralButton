@@ -9,10 +9,22 @@ html {
 
 body {
   font-family: Arial, "Helvetica Neue", Helvetica, sans-serif;
-  padding-top: 10rem;
   text-align: center;
+}
+
+.heading {
+  font-size: 48px;
+  margin-bottom: 5rem;
+  color: #333;
+}
+
+.container {
+  margin: 9rem auto;
+  max-width: 600px;
 }
 
 button.spiral-button {
   font-size: 16px;
+  margin-right: 1rem;
+  margin-bottom: 2rem;
 }
