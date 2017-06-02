@@ -1,7 +1,10 @@
 SpiralButton({
   element: document.querySelector("button"),
   buttonText: "Send",
-  onComplete: function () {
-    console.log("button animation complete");
+  onComplete: function (buttonElement) {
+    console.log("button animation complete", buttonElement);
+  }, 
+  onStart: function (buttonElement) {
+    console.log("button animation started", buttonElement);
   }
 });

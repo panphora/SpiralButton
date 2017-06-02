@@ -2,6 +2,7 @@ function SpiralButton (options) {
   var buttonElement = options.element;
   var buttonText = options.buttonText;
   var onCompleteCallback = options.onComplete;
+  var onStartCallback = options.onStart;
 
 
   // Create button HTML
@@ -47,7 +48,7 @@ function SpiralButton (options) {
       spiralButtonElem.classList.remove("pressed");
 
       if (onCompleteCallback) {
-        onCompleteCallback();
+        onCompleteCallback(buttonElement);
       }
     }
   });
@@ -55,6 +56,10 @@ function SpiralButton (options) {
   spiralButtonElem.addEventListener("click", function (event) {
     event.preventDefault();
     spiralButtonElem.classList.add("pressed");
+
+    if (onStartCallback) {
+      onStartCallback(buttonElement);
+    }
   });
 
 
