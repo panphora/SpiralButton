@@ -27,11 +27,25 @@ spiralBgElem.style.cssText += cssTextArr.join(" ");
 
 // EVENTS
 
-spiralBgElem.onCSSAnimationEnd(function () {
-  spiralButtonElem.classList.remove("pressed");
+spiralBgElem.onCSSAnimationEnd(function (event) {
+  if (event && event.animationName === "growSpiral") {
+    // animation has really ended
+    console.log("button animation ended");
+    spiralButtonElem.classList.remove("pressed");
+  }
 });
 
 formElement.addEventListener("submit", function (event) {
   event.preventDefault();
   spiralButtonElem.classList.add("pressed");
 });
+
+
+
+
+
+
+
+
+
+
