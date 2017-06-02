@@ -1,5 +1,6 @@
 /* MAIN BUTTON */
 
+/* overwrite default button styles */
 button.spiral-button {
   background: none;
   border: 0;
@@ -31,6 +32,7 @@ button.spiral-button .spiral-button-bottom {
   transition: box-shadow .2s, -webkit-box-shadow .2s;
 }
 
+/* overwrite default button styles */
 button.spiral-button::-moz-focus-inner {
   border: 0;
   padding: 0;
@@ -43,7 +45,7 @@ button.spiral-button:focus .spiral-button-bottom, button.spiral-button:active .s
           box-shadow: 0px 0px 8px rgba(33,150,243,.7), 0px 0px 22px rgba(33,150,243,.3);
 }
 
-/* MAIN CONTAINERS */
+/* BUTTON STRUCTURE */
 
 .spiral-button-outer-container {
   position: relative;
@@ -91,7 +93,22 @@ button.spiral-button:focus .spiral-button-bottom, button.spiral-button:active .s
   background-color: #d4d4d4;
 }
 
-/* BUTTON LEGS */
+
+
+/* --- SVG STYLES --- */
+
+/* SVG ELEMENT: SPIRAL BG */
+
+.spiral-bg {
+  visibility: hidden;
+  height: 5px;
+  position: absolute;
+  -webkit-transform: scale(.01);
+          transform: scale(.01);
+
+}
+
+/* SVG ELEMENTS: LEGS */
 
 .spiral-button .leg-container {
   position: absolute;
@@ -125,18 +142,36 @@ button.spiral-button:focus .spiral-button-bottom, button.spiral-button:active .s
   height: 8.8px;
 }
 
-/* SPIRAL BG */
+/* SVG PATHS */
 
-.spiral-bg {
-  visibility: hidden;
-  height: 5px;
-  position: absolute;
-  -webkit-transform: scale(.01);
-          transform: scale(.01);
-
+.leg-top-right .leg-top-right-bg {
+  fill:#D4D4D4;
 }
 
-/* PRESSED ANIMATION */
+.leg-top-right .leg-top-right-line {
+  stroke:#333333;
+  stroke-width:2;
+  stroke-linecap:round;
+  stroke-miterlimit:10;
+}
+
+.leg-bottom-right .leg-bottom-right-line {
+  stroke:#333333;
+  stroke-width:2;
+  stroke-linecap:round;
+  stroke-miterlimit:10;
+}
+
+.leg-bottom-left .leg-bottom-left-bg {
+  fill:#D4D4D4;
+} 
+
+.leg-bottom-left .leg-bottom-left-line {
+  stroke:#333333;
+  stroke-width:2;
+  stroke-linecap:round;
+  stroke-miterlimit:10;
+}
 
 .spiral-button .leg .contents {
   -webkit-transition: -webkit-transform .3s;
@@ -144,6 +179,9 @@ button.spiral-button:focus .spiral-button-bottom, button.spiral-button:active .s
   transition: transform .3s;
   transition: transform .3s, -webkit-transform .3s;
 }
+
+
+/* PRESSED ANIMATION */
 
 .spiral-button.pressed .spiral-button-face-container {
   -webkit-transform: translate(7px, 7px);
