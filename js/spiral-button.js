@@ -2,9 +2,6 @@
 
 // initialize elements
 var spiralButtonElem = document.querySelector(".spiral-button");
-var formElement = document.querySelector("form");
-
-
 // SPIRAL GROW CALCULATION
 var spiralBgElem = document.querySelector(".spiral-bg");
 var spiralButtonFaceContainerElem = document.querySelector(".spiral-button-face-container");
@@ -24,17 +21,18 @@ cssTextArr.push("left: " + (spiralButtonFaceOuterWidth/2 - initialSpiralBgSize/2
 cssTextArr.push("top: " + (spiralButtonFaceOuterHeight/2 - initialSpiralBgSize/2) + "px;");
 spiralBgElem.style.cssText += cssTextArr.join(" ");
 
-
 // EVENTS
-
-spiralBgElem.onCSSAnimationEnd(function (event) {
+onCSSAnimationEnd(spiralBgElem, function (event) {
   if (event && event.animationName === "growSpiral") {
     // animation has really ended
-    console.log("button animation ended");
     spiralButtonElem.classList.remove("pressed");
   }
 });
 
+
+
+
+var formElement = document.querySelector("form");
 formElement.addEventListener("submit", function (event) {
   event.preventDefault();
   spiralButtonElem.classList.add("pressed");

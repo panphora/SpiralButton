@@ -1,7 +1,7 @@
 /* MAIN BUTTON */
 
 /* overwrite default button styles */
-button.spiral-button {
+.spiral-button {
   background: none;
   border: 0;
   color: inherit;
@@ -20,12 +20,12 @@ button.spiral-button {
           box-sizing: border-box;
 }
 
-button.spiral-button * {
+.spiral-button * {
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
 }
 
-button.spiral-button .spiral-button-bottom {
+.spiral-button .spiral-button-bottom {
   -webkit-transition: -webkit-box-shadow .2s;
   transition: -webkit-box-shadow .2s;
   transition: box-shadow .2s;
@@ -33,14 +33,14 @@ button.spiral-button .spiral-button-bottom {
 }
 
 /* overwrite default button styles */
-button.spiral-button::-moz-focus-inner {
+.spiral-button::-moz-focus-inner {
   border: 0;
   padding: 0;
 }
 
 /* FOCUS/ACTIVE STYLES */
 
-button.spiral-button:focus .spiral-button-bottom, button.spiral-button:active .spiral-button-bottom {
+.spiral-button:focus .spiral-button-bottom, .spiral-button:active .spiral-button-bottom {
   -webkit-box-shadow: 0px 0px 8px rgba(33,150,243,.7), 0px 0px 22px rgba(33,150,243,.3);
           box-shadow: 0px 0px 8px rgba(33,150,243,.7), 0px 0px 22px rgba(33,150,243,.3);
 }
