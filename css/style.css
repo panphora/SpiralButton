@@ -100,17 +100,6 @@ body {
   height: 8.8px;
 }
 
-.spiral-bg {
-  visibility: hidden;
-  height: 5px;
-  /* center vertically and horizontally */
-  position: absolute;
-  top: 45%;
-  left: 50%;
-  -webkit-transform: translate(-50%, -50%);
-          transform: translate(-50%, -50%);
-}
-
 
 
 /* BUTTONS */
@@ -151,6 +140,17 @@ button.spiral-button:focus .spiral-button-bottom, button.spiral-button:active .s
           box-shadow: 0px 0px 8px rgba(33,150,243,.7), 0px 0px 22px rgba(33,150,243,.3);
 }
 
+
+/* SPIRAL BG */
+
+.spiral-bg {
+  visibility: hidden;
+  height: 5px;
+  position: absolute;
+  -webkit-transform: scale(.01);
+          transform: scale(.01);
+
+}
 
 /* PRESSED ANIMATION */
 
@@ -211,23 +211,23 @@ button.spiral-button:focus .spiral-button-bottom, button.spiral-button:active .s
 
 @-webkit-keyframes growSpiral {
   from {
-    -webkit-transform: scale(0);
-            transform: scale(0);
+    -webkit-transform: scale(.01);
+            transform: scale(.01);
   }
   to {
-    -webkit-transform: scale(150);
-            transform: scale(150);
+    -webkit-transform: scale(1);
+            transform: scale(1);
   }
 }
 
 @keyframes growSpiral {
   from {
-    -webkit-transform: scale(0);
-            transform: scale(0);
+    -webkit-transform: scale(.01);
+            transform: scale(.01);
   }
   to {
-    -webkit-transform: scale(150);
-            transform: scale(150);
+    -webkit-transform: scale(1);
+            transform: scale(1);
   }
 }
 
