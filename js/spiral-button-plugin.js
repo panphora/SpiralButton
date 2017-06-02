@@ -1,5 +1,5 @@
 function SpiralButton (options) {
-  var buttonElement = options.element;
+  var buttonElement = options.buttonElement;
   var buttonText = options.buttonText;
   var onCompleteCallback = options.onComplete;
   var onStartCallback = options.onStart;
