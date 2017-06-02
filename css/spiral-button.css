@@ -105,7 +105,36 @@ button.spiral-button:focus .spiral-button-bottom, button.spiral-button:active .s
   position: absolute;
   -webkit-transform: scale(.01);
           transform: scale(.01);
+}
 
+/* SVG PATHS FOR: SPIRAL BG */
+
+.spiral-bg .one {
+  fill:#B2FF74;
+}
+
+.spiral-bg .two {
+  fill:#00CF92;
+}
+
+.spiral-bg .three {
+  fill:#A26FFF;
+}
+
+.spiral-bg .four {
+  fill:#FF6AB7;
+}
+
+.spiral-bg .five {
+  fill:#FF655A;
+}
+
+.spiral-bg .six {
+  fill:#FFD374;
+}
+
+.spiral-bg .seven {
+  fill:#F9FF6F;
 }
 
 /* SVG ELEMENTS: LEGS */
@@ -142,7 +171,7 @@ button.spiral-button:focus .spiral-button-bottom, button.spiral-button:active .s
   height: 8.8px;
 }
 
-/* SVG PATHS */
+/* SVG PATHS FOR: LEGS */
 
 .leg-top-right .leg-top-right-bg {
   fill:#D4D4D4;
