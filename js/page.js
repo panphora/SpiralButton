@@ -16,7 +16,7 @@ function simulateClick (elem) {
   elem.click();
 }
 
-doToEach(buttonElements, simulateClick, 400, true);
+doToEach(buttonElements, simulateClick, 600, true);
 
 function doToEach (arr, func, delay, repeat, index) {
   var index = index || 0;
@@ -26,11 +26,24 @@ function doToEach (arr, func, delay, repeat, index) {
     setTimeout(function () {
       func(arr[index]);
       index += 1;
-      doToEach(arr, func, delay, repeat, index);
+
+      requestAnimationFrame(function () {
+        doToEach(arr, func, delay, repeat, index);
+      });
     }, delay);
   } else if (repeat) {
     console.log(123);
     index = 0;
-    doToEach(arr, func, delay, repeat, index);
+    requestAnimationFrame(function () {
+      doToEach(arr, func, delay, repeat, index);
+    });
   }
 }
+
+
+
+
+
+
+
+
