@@ -4,6 +4,8 @@ function SpiralButton (options) {
   var onComplete = options.onComplete;
   var onStart = options.onStart;
   var colorScheme = options.colorScheme;
+  var rotateAnimationDuration = options.rotateAnimationDuration;
+  var scaleAnimationDuration = options.scaleAnimationDuration;
   var returnObjectMethods = {};
 
 
@@ -58,7 +60,7 @@ function SpiralButton (options) {
   }
 
 
-  // Initial calculations
+  // Calculations for spiral size and position
 
   var spiralButtonFaceOuterWidth = spiralButtonFaceContainerElem.offsetWidth;
   var spiralButtonFaceOuterHeight = spiralButtonFaceContainerElem.offsetHeight;
@@ -66,13 +68,25 @@ function SpiralButton (options) {
   var initialSpiralBgSize = (desiredTunnelExitWidth * (20/3)); // should range from 5px to 17px
 
 
+  // Get animation duration
+
+  rotateAnimationDuration = getAnimationDurationString(rotateAnimationDuration);
+  scaleAnimationDuration = getAnimationDurationString(scaleAnimationDuration);
+
+  var durationString = "animation-duration: " + rotateAnimationDuration + ", " + scaleAnimationDuration + ";";
+  var webkitDurationString = "-webkit-" + durationString;
+
   // Spiral size adapts to text size & spiral svg is centered over the button's face  
 
-  var cssTextArr = [];
-  cssTextArr.push("width: " + initialSpiralBgSize + "px;");
-  cssTextArr.push("height: " + initialSpiralBgSize + "px;");
-  cssTextArr.push("left: " + (spiralButtonFaceOuterWidth/2 - initialSpiralBgSize/2) + "px;");
-  cssTextArr.push("top: " + (spiralButtonFaceOuterHeight/2 - initialSpiralBgSize/2) + "px;");
+  var cssTextArr = [
+    "width: " + initialSpiralBgSize + "px;",
+    "height: " + initialSpiralBgSize + "px;",
+    "left: " + (spiralButtonFaceOuterWidth/2 - initialSpiralBgSize/2) + "px;",
+    "top: " + (spiralButtonFaceOuterHeight/2 - initialSpiralBgSize/2) + "px;",
+    webkitDurationString,
+    durationString
+  ];
+
   spiralBgElem.style.cssText += cssTextArr.join(" ");
 
 
@@ -110,11 +124,23 @@ function SpiralButton (options) {
   }
 
 
-  // Utility functions
+  // Utility functions -- todo move these outside of SpiralButton function
 
   function onCSSAnimationEnd (element, callback) {
     element.addEventListener('webkitAnimationEnd', callback);
     element.addEventListener('animationend', callback);
+  }
+
+  function getAnimationDurationString (durationItem) {
+    if (!durationItem) {
+      durationItem = "1500ms"; // default duration
+    }
+
+    if (typeof durationItem === "number") {
+      return durationItem + "ms"
+    }
+
+    return durationItem;
   }
 
 
