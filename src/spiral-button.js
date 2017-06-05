@@ -14,7 +14,7 @@
     var onComplete = options.onComplete;
     var onStart = options.onStart;
     var colorScheme = options.colorScheme; // an array of 7 colors
-    var duration = options.duration; // specified in ms
+    var duration = options.duration; // a number representing ms or a string like "1s" or "1000ms"
     var rotation = options.rotation; // can be: 0,90,180,270,360
     var debug = options.debug;
     var returnObjectMethods = {};
@@ -194,7 +194,7 @@
   }
 
   return SpiralButton;
-  
+
 }));
 
 

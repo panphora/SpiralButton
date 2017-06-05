@@ -1,0 +1,33 @@
+{
+  "name": "SpiralButton",
+  "title": "SpiralButton.js",
+  "version": "1.0.0",
+  "description": "A button with a rotating spiral background",
+  "author": {
+    "name": "David Miranda",
+    "url": "http://davidmiranda.info"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/panphora/SpiralButton"
+  },
+  "devDependencies": {
+    "gulp": "^3.8.0",
+    "gulp-clean": "~0.2.4",
+    "gulp-minify-css": "^1.2.4",
+    "gulp-rename": "^1.2.0",
+    "gulp-uglify": "~0.3.0"
+  },
+  "licenses": [
+    {
+      "type": "MIT",
+      "url": "http://mit-license.org/"
+    }
+  ],
+  "keywords": [
+    "button",
+    "spiral",
+    "svg",
+    "pretty"
+  ]
+}
