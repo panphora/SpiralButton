@@ -48,7 +48,7 @@
   padding: 0;
 }
 
-/* FOCUS/ACTIVE STYLES */
+/* FOCUS/ACTIVE STYLES: add a light blue hightlight around button */
 
 .spiral-button:focus .spiral-button-bottom, .spiral-button:active .spiral-button-bottom {
   -webkit-box-shadow: 0px 0px 8px rgba(33,150,243,.7), 0px 0px 22px rgba(33,150,243,.3);
@@ -73,9 +73,7 @@
   line-height: 1.4em;
   background-color: #ffffff;
   -webkit-transition: -webkit-transform .3s;
-  transition: -webkit-transform .3s;
   transition: transform .3s;
-  transition: transform .3s, -webkit-transform .3s;
 }
 
 .spiral-button-main-text {
@@ -103,9 +101,6 @@
   background-color: #d4d4d4;
 }
 
-
-
-/* --- SVG STYLES --- */
 
 /* SVG ELEMENT: SPIRAL BG */
 
@@ -154,39 +149,37 @@
 /* SVG PATHS FOR: LEGS */
 
 .leg-top-right .leg-top-right-bg {
-  fill:#D4D4D4;
+  fill: #D4D4D4;
 }
 
 .leg-top-right .leg-top-right-line {
-  stroke:#333333;
-  stroke-width:2;
-  stroke-linecap:round;
-  stroke-miterlimit:10;
+  stroke: #333333;
+  stroke-width: 2;
+  stroke-linecap: round;
+  stroke-miterlimit: 10;
 }
 
 .leg-bottom-right .leg-bottom-right-line {
-  stroke:#333333;
-  stroke-width:2;
-  stroke-linecap:round;
-  stroke-miterlimit:10;
+  stroke: #333333;
+  stroke-width: 2;
+  stroke-linecap: round;
+  stroke-miterlimit: 10;
 }
 
 .leg-bottom-left .leg-bottom-left-bg {
-  fill:#D4D4D4;
+  fill: #D4D4D4;
 } 
 
 .leg-bottom-left .leg-bottom-left-line {
-  stroke:#333333;
-  stroke-width:2;
-  stroke-linecap:round;
-  stroke-miterlimit:10;
+  stroke: #333333;
+  stroke-width: 2;
+  stroke-linecap: round;
+  stroke-miterlimit: 10;
 }
 
 .spiral-button .leg .contents {
   -webkit-transition: -webkit-transform .3s;
-  transition: -webkit-transform .3s;
   transition: transform .3s;
-  transition: transform .3s, -webkit-transform .3s;
 }
 
 
@@ -214,11 +207,16 @@
 
 .spiral-button.pressed .spiral-bg {
   visibility: visible;
-  -webkit-animation: growAndRotateSpiral 1.5s cubic-bezier(0.55, 0.085, 0.68, 0.53);
-          animation: growAndRotateSpiral 1.5s cubic-bezier(0.55, 0.085, 0.68, 0.53);
+  -webkit-animation: growAndRotateSpiral90 1.5s cubic-bezier(0.55, 0.085, 0.68, 0.53);
+          animation: growAndRotateSpiral90 1.5s cubic-bezier(0.55, 0.085, 0.68, 0.53);
 }
 
 /* alternate rotations */
+
+.spiral-button.pressed.rotate-0 .spiral-bg {
+  -webkit-animation-name: growAndRotateSpiral0;
+          animation-name: growAndRotateSpiral0;
+}
 
 .spiral-button.pressed.rotate-90 .spiral-bg {
   -webkit-animation-name: growAndRotateSpiral90;
@@ -240,37 +238,30 @@
           animation-name: growAndRotateSpiral360;
 }
 
-.spiral-button.pressed.rotate-450 .spiral-bg {
-  -webkit-animation-name: growAndRotateSpiral450;
-          animation-name: growAndRotateSpiral450;
-}
 
-/* ANIMATIONS */
+/* ANIMATIONS: ROTATION OPTIONS */
 
-@-webkit-keyframes growAndRotateSpiral {
+@-webkit-keyframes growAndRotateSpiral0 {
   from {
-    -webkit-transform: scale(.01);
-            transform: scale(.01);
+    -webkit-transform: scale(.01) rotate(0deg);
+            transform: scale(.01) rotate(0deg);
   }
   to {
-    -webkit-transform: scale(1);
-            transform: scale(1);
+    -webkit-transform: scale(1) rotate(-90deg);
+            transform: scale(1) rotate(-90deg);
   }
 }
 
-@keyframes growAndRotateSpiral {
+@keyframes growAndRotateSpiral0 {
   from {
-    -webkit-transform: scale(.01);
-            transform: scale(.01);
+    -webkit-transform: scale(.01) rotate(0deg);
+            transform: scale(.01) rotate(0deg);
   }
   to {
-    -webkit-transform: scale(1);
-            transform: scale(1);
+    -webkit-transform: scale(1) rotate(-90deg);
+            transform: scale(1) rotate(-90deg);
   }
 }
-
-/* ANIMATIONS: CUSTOM ROTATION */
-
 @-webkit-keyframes growAndRotateSpiral90 {
   from {
     -webkit-transform: scale(.01) rotate(0deg);
@@ -350,26 +341,6 @@
   to {
     -webkit-transform: scale(1) rotate(-360deg);
             transform: scale(1) rotate(-360deg);
-  }
-}
-@-webkit-keyframes growAndRotateSpiral450 {
-  from {
-    -webkit-transform: scale(.01) rotate(0deg);
-            transform: scale(.01) rotate(0deg);
-  }
-  to {
-    -webkit-transform: scale(1) rotate(-450deg);
-            transform: scale(1) rotate(-450deg);
-  }
-}
-@keyframes growAndRotateSpiral450 {
-  from {
-    -webkit-transform: scale(.01) rotate(0deg);
-            transform: scale(.01) rotate(0deg);
-  }
-  to {
-    -webkit-transform: scale(1) rotate(-450deg);
-            transform: scale(1) rotate(-450deg);
   }
 }
 

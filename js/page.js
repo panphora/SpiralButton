@@ -3,19 +3,20 @@ var colorSchemes = ["default","gold","pinkAndBlue","fruity","oceanWave","green",
 var currentSetTimeout;
 var stopAnimation = false;
 
+
 // Create spiral buttons
 
 var spiralButtons = buttonElementsArray.map(function (buttonElement, index) {
   return SpiralButton({
     buttonElement: buttonElement,
-    colorScheme: colorSchemes[index],
-    rotation: 90 
+    colorScheme: colorSchemes[index]
   });
 });
 
+
 // Animate spiral buttons
 
-doToEach(spiralButtons, simulateClick, 600, true);
+doToEach(spiralButtons, simulateClick, 700, true);
 
 
 // Stop button animations if user clicks on page
