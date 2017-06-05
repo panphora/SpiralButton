@@ -1,4 +1,12 @@
-window.SpiralButton = (function () {
+(function (root, factory) {
+  if (typeof define === "function" && define.amd) {
+    define([], factory);
+  } else if (typeof module === "object" && module.exports) {
+    module.exports = factory();
+  } else {
+    root.SpiralButton = factory();
+  }
+}(this, function () {
 
   function SpiralButton (options) {
     var buttonElement = options.buttonElement;
@@ -165,6 +173,7 @@ window.SpiralButton = (function () {
     };
   }
 
+
   // Utility functions -- todo move these outside of SpiralButton function
 
   function onCSSAnimationEnd (element, callback) {
@@ -185,7 +194,8 @@ window.SpiralButton = (function () {
   }
 
   return SpiralButton;
-}());
+  
+}));
 
 
 
