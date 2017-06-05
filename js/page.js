@@ -10,8 +10,7 @@ var spiralButtons = buttonElementsArray.map(function (buttonElement, index) {
     buttonElement: buttonElement,
     buttonText: "Send",
     colorScheme: colorSchemes[index],
-    scaleAnimationDuration: 2000,
-    rotateAnimationDuration: 2000
+    rotationDegrees: 200
   });
 });
 
