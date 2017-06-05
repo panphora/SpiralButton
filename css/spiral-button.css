@@ -219,29 +219,19 @@
 
 /* alternate rotations */
 
-.spiral-button.pressed.rotate-160 .spiral-bg {
-  -webkit-animation-name: growAndRotateSpiral160;
-          animation-name: growAndRotateSpiral160;
+.spiral-button.pressed.rotate-90 .spiral-bg {
+  -webkit-animation-name: growAndRotateSpiral90;
+          animation-name: growAndRotateSpiral90;
 }
 
-.spiral-button.pressed.rotate-200 .spiral-bg {
-  -webkit-animation-name: growAndRotateSpiral200;
-          animation-name: growAndRotateSpiral200;
+.spiral-button.pressed.rotate-180 .spiral-bg {
+  -webkit-animation-name: growAndRotateSpiral180;
+          animation-name: growAndRotateSpiral180;
 }
 
-.spiral-button.pressed.rotate-240 .spiral-bg {
-  -webkit-animation-name: growAndRotateSpiral240;
-          animation-name: growAndRotateSpiral240;
-}
-
-.spiral-button.pressed.rotate-280 .spiral-bg {
-  -webkit-animation-name: growAndRotateSpiral280;
-          animation-name: growAndRotateSpiral280;
-}
-
-.spiral-button.pressed.rotate-320 .spiral-bg {
-  -webkit-animation-name: growAndRotateSpiral320;
-          animation-name: growAndRotateSpiral320;
+.spiral-button.pressed.rotate-270 .spiral-bg {
+  -webkit-animation-name: growAndRotateSpiral270;
+          animation-name: growAndRotateSpiral270;
 }
 
 .spiral-button.pressed.rotate-360 .spiral-bg {
@@ -249,163 +239,136 @@
           animation-name: growAndRotateSpiral360;
 }
 
-.spiral-button.pressed.rotate-400 .spiral-bg {
-  -webkit-animation-name: growAndRotateSpiral400;
-          animation-name: growAndRotateSpiral400;
-}
-
-.spiral-button.pressed.rotate-440 .spiral-bg {
-  -webkit-animation-name: growAndRotateSpiral440;
-          animation-name: growAndRotateSpiral440;
+.spiral-button.pressed.rotate-450 .spiral-bg {
+  -webkit-animation-name: growAndRotateSpiral450;
+          animation-name: growAndRotateSpiral450;
 }
 
 /* ANIMATIONS */
 
 @-webkit-keyframes growAndRotateSpiral {
   from {
-    -webkit-transform: scale(.01) rotate(0deg);
-            transform: scale(.01) rotate(0deg);
+    -webkit-transform: scale(.01);
+            transform: scale(.01);
   }
   to {
-    -webkit-transform: scale(1) rotate(-200deg);
-            transform: scale(1) rotate(-200deg);
+    -webkit-transform: scale(1);
+            transform: scale(1);
   }
 }
 
 @keyframes growAndRotateSpiral {
   from {
-    -webkit-transform: scale(.01) rotate(0deg);
-            transform: scale(.01) rotate(0deg);
+    -webkit-transform: scale(.01);
+            transform: scale(.01);
   }
   to {
-    -webkit-transform: scale(1) rotate(-200deg);
-            transform: scale(1) rotate(-200deg);
+    -webkit-transform: scale(1);
+            transform: scale(1);
   }
 }
 
 /* ANIMATIONS: CUSTOM ROTATION */
 
-@-webkit-keyframes growAndRotateSpiral {
+@-webkit-keyframes growAndRotateSpiral90 {
   from {
-    -webkit-transform: scale(.01);
-            transform: scale(.01);
+    -webkit-transform: scale(.01) rotate(0deg);
+            transform: scale(.01) rotate(0deg);
   }
   to {
-    -webkit-transform: scale(1);
-            transform: scale(1);
+    -webkit-transform: scale(1) rotate(-90deg);
+            transform: scale(1) rotate(-90deg);
   }
 }
 
-@keyframes growAndRotateSpiral {
-  from {
-    -webkit-transform: scale(.01);
-            transform: scale(.01);
-  }
-  to {
-    -webkit-transform: scale(1);
-            transform: scale(1);
-  }
-}
-
-@-webkit-keyframes growAndRotateSpiral40 {
+@keyframes growAndRotateSpiral90 {
   from {
     -webkit-transform: scale(.01) rotate(0deg);
             transform: scale(.01) rotate(0deg);
   }
   to {
-    -webkit-transform: scale(1) rotate(-40deg);
-            transform: scale(1) rotate(-40deg);
+    -webkit-transform: scale(1) rotate(-90deg);
+            transform: scale(1) rotate(-90deg);
   }
 }
-
-@keyframes growAndRotateSpiral40 {
+@-webkit-keyframes growAndRotateSpiral180 {
   from {
     -webkit-transform: scale(.01) rotate(0deg);
             transform: scale(.01) rotate(0deg);
   }
   to {
-    -webkit-transform: scale(1) rotate(-40deg);
-            transform: scale(1) rotate(-40deg);
+    -webkit-transform: scale(1) rotate(-180deg);
+            transform: scale(1) rotate(-180deg);
   }
 }
-@-webkit-keyframes growAndRotateSpiral80 {
+@keyframes growAndRotateSpiral180 {
   from {
     -webkit-transform: scale(.01) rotate(0deg);
             transform: scale(.01) rotate(0deg);
   }
   to {
-    -webkit-transform: scale(1) rotate(-80deg);
-            transform: scale(1) rotate(-80deg);
+    -webkit-transform: scale(1) rotate(-180deg);
+            transform: scale(1) rotate(-180deg);
   }
 }
-@keyframes growAndRotateSpiral80 {
+@-webkit-keyframes growAndRotateSpiral270 {
   from {
     -webkit-transform: scale(.01) rotate(0deg);
             transform: scale(.01) rotate(0deg);
   }
   to {
-    -webkit-transform: scale(1) rotate(-80deg);
-            transform: scale(1) rotate(-80deg);
+    -webkit-transform: scale(1) rotate(-270deg);
+            transform: scale(1) rotate(-270deg);
   }
 }
-@-webkit-keyframes growAndRotateSpiral120 {
+@keyframes growAndRotateSpiral270 {
   from {
     -webkit-transform: scale(.01) rotate(0deg);
             transform: scale(.01) rotate(0deg);
   }
   to {
-    -webkit-transform: scale(1) rotate(-120deg);
-            transform: scale(1) rotate(-120deg);
+    -webkit-transform: scale(1) rotate(-270deg);
+            transform: scale(1) rotate(-270deg);
   }
 }
-@keyframes growAndRotateSpiral120 {
+@-webkit-keyframes growAndRotateSpiral360 {
   from {
     -webkit-transform: scale(.01) rotate(0deg);
             transform: scale(.01) rotate(0deg);
   }
   to {
-    -webkit-transform: scale(1) rotate(-120deg);
-            transform: scale(1) rotate(-120deg);
+    -webkit-transform: scale(1) rotate(-360deg);
+            transform: scale(1) rotate(-360deg);
   }
 }
-@-webkit-keyframes growAndRotateSpiral160 {
+@keyframes growAndRotateSpiral360 {
   from {
     -webkit-transform: scale(.01) rotate(0deg);
             transform: scale(.01) rotate(0deg);
   }
   to {
-    -webkit-transform: scale(1) rotate(-160deg);
-            transform: scale(1) rotate(-160deg);
+    -webkit-transform: scale(1) rotate(-360deg);
+            transform: scale(1) rotate(-360deg);
   }
 }
-@keyframes growAndRotateSpiral160 {
+@-webkit-keyframes growAndRotateSpiral450 {
   from {
     -webkit-transform: scale(.01) rotate(0deg);
             transform: scale(.01) rotate(0deg);
   }
   to {
-    -webkit-transform: scale(1) rotate(-160deg);
-            transform: scale(1) rotate(-160deg);
+    -webkit-transform: scale(1) rotate(-450deg);
+            transform: scale(1) rotate(-450deg);
   }
 }
-@-webkit-keyframes growAndRotateSpiral200 {
+@keyframes growAndRotateSpiral450 {
   from {
     -webkit-transform: scale(.01) rotate(0deg);
             transform: scale(.01) rotate(0deg);
   }
   to {
-    -webkit-transform: scale(1) rotate(-200deg);
-            transform: scale(1) rotate(-200deg);
-  }
-}
-@keyframes growAndRotateSpiral200 {
-  from {
-    -webkit-transform: scale(.01) rotate(0deg);
-            transform: scale(.01) rotate(0deg);
-  }
-  to {
-    -webkit-transform: scale(1) rotate(-200deg);
-            transform: scale(1) rotate(-200deg);
+    -webkit-transform: scale(1) rotate(-450deg);
+            transform: scale(1) rotate(-450deg);
   }
 }
 
