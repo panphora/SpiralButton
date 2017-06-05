@@ -8,9 +8,7 @@ var stopAnimation = false;
 var spiralButtons = buttonElementsArray.map(function (buttonElement, index) {
   return SpiralButton({
     buttonElement: buttonElement,
-    buttonText: "Send",
-    colorScheme: colorSchemes[index],
-    rotationDegrees: 200
+    colorScheme: colorSchemes[index]
   });
 });
 
