@@ -57,7 +57,7 @@
 
 /* BUTTON STRUCTURE */
 
-.spiral-button-outer-container {
+.spiral-button .spiral-button-outer-container {
   position: relative;
   display: inline-block;
   padding-right: 7px;
@@ -65,7 +65,7 @@
   white-space: nowrap;
 }
 
-.spiral-button-face-container {
+.spiral-button .spiral-button-face-container {
   position: relative;
   display: inline-block;
   padding: .48rem 1rem .52rem;
@@ -76,12 +76,12 @@
   transition: transform .3s;
 }
 
-.spiral-button-main-text {
+.spiral-button .spiral-button-main-text {
   position: relative;
   text-shadow: rgb(255, 255, 255) 1.5px 0px 0px, rgb(255, 255, 255) 1.17883px 0.927555px 0px, rgb(255, 255, 255) 0.352856px 1.45791px 0px, rgb(255, 255, 255) -0.62422px 1.36395px 0px, rgb(255, 255, 255) -1.33399px 0.685909px 0px, rgb(255, 255, 255) -1.47251px -0.285852px 0px, rgb(255, 255, 255) -0.980465px -1.1352px 0px, rgb(255, 255, 255) -0.0685596px -1.49843px 0px, rgb(255, 255, 255) 0.872705px -1.21999px 0px, rgb(255, 255, 255) 1.44026px -0.419123px 0px;
 }
 
-.spiral-button-face-background-container {
+.spiral-button .spiral-button-face-background-container {
   overflow: hidden;
   position: absolute;
   top: 0;
@@ -90,7 +90,7 @@
   height: 100%;
 }
 
-.spiral-button-bottom {
+.spiral-button .spiral-button-bottom {
   position: absolute;
   right: 0px;
   bottom: 0px;
@@ -104,7 +104,7 @@
 
 /* SVG ELEMENT: SPIRAL BG */
 
-.spiral-bg {
+.spiral-button .spiral-bg {
   visibility: hidden;
   height: 5px;
   position: absolute;
@@ -148,29 +148,29 @@
 
 /* SVG PATHS FOR: LEGS */
 
-.leg-top-right .leg-top-right-bg {
+.spiral-button .leg-top-right .leg-top-right-bg {
   fill: #D4D4D4;
 }
 
-.leg-top-right .leg-top-right-line {
+.spiral-button .leg-top-right .leg-top-right-line {
   stroke: #333333;
   stroke-width: 2;
   stroke-linecap: round;
   stroke-miterlimit: 10;
 }
 
-.leg-bottom-right .leg-bottom-right-line {
+.spiral-button .leg-bottom-right .leg-bottom-right-line {
   stroke: #333333;
   stroke-width: 2;
   stroke-linecap: round;
   stroke-miterlimit: 10;
 }
 
-.leg-bottom-left .leg-bottom-left-bg {
+.spiral-button .leg-bottom-left .leg-bottom-left-bg {
   fill: #D4D4D4;
 } 
 
-.leg-bottom-left .leg-bottom-left-line {
+.spiral-button .leg-bottom-left .leg-bottom-left-line {
   stroke: #333333;
   stroke-width: 2;
   stroke-linecap: round;
