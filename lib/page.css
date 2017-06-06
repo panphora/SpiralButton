@@ -9,6 +9,7 @@ html {
 
 body {
   font-family: Arial, "Helvetica Neue", Helvetica, sans-serif;
+  font-size: 16px;
 }
 
 .heading {
@@ -32,4 +33,13 @@ body {
 
 .spiral-buttons-container {
   text-align: center;
+  margin-bottom: 6rem;
+}
+
+h1#spiral-button {
+  display: none;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  margin-top: 1.5em;
 }

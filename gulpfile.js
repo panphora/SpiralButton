@@ -7,7 +7,7 @@ var gulp = require('gulp'),
   gfi = require("gulp-file-insert");
 
 
-gulp.task('default', ['clean', 'minify-js', 'minify-css']);
+gulp.task('default', ['clean', 'minify-js', 'minify-css', 'compileFrontPage']);
 
 gulp.task('clean', function() {
   return gulp.src(['dist'], { read: false })
@@ -28,18 +28,18 @@ gulp.task('minify-css', function () {
     .pipe(gulp.dest('./dist'));
 });
 
-gulp.task('readmeToHtml', function () {
+gulp.task('convertReadmeToHtml', function () {
   return gulp.src('README.md')
     .pipe(markdown())
-    .pipe(gulp.dest('dist'));
+    .pipe(gulp.dest('./page-src'));
 });
 
-gulp.task('readmeIntoIndex', function () {
-  return gulp.src('index.html')
+gulp.task('compileFrontPage', ['convertReadmeToHtml'], function () {
+  return gulp.src('page-src/index.html')
     .pipe(gfi({
-      "<!-- readme -->": "dist/README.html"
+      "<!-- readme -->": "page-src/README.html"
     }))
-    .pipe(gulp.dest('dist'));
+    .pipe(gulp.dest('./'));
 });
 
 
