@@ -3,9 +3,9 @@
 A button that spirals with colors as it loads. 
 
 
-## Add files to your page
+## How to add it to your page
 
-In order to use it on your page, include the [minfied files](https://github.com/panphora/SpiralButton/tree/master/dist) on your page:
+In order to use it on your page, include the [minified files](https://panphora.github.io/SpiralButton/download/spiral-button.zip) on your page:
 
 ```html
 <link rel="stylesheet" href="css/spiral-button.min.css">
