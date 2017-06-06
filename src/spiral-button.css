@@ -274,19 +274,18 @@
             transform: scale(.01) rotate(0deg);
   }
   to {
-    -webkit-transform: scale(1) rotate(-90deg);
-            transform: scale(1) rotate(-90deg);
+    -webkit-transform: scale(1) rotate(0deg);
+            transform: scale(1) rotate(0deg);
   }
 }
-
 @keyframes growAndRotateSpiral0 {
   from {
     -webkit-transform: scale(.01) rotate(0deg);
             transform: scale(.01) rotate(0deg);
   }
   to {
-    -webkit-transform: scale(1) rotate(-90deg);
-            transform: scale(1) rotate(-90deg);
+    -webkit-transform: scale(1) rotate(0deg);
+            transform: scale(1) rotate(0deg);
   }
 }
 @-webkit-keyframes growAndRotateSpiral90 {
@@ -299,7 +298,6 @@
             transform: scale(1) rotate(-90deg);
   }
 }
-
 @keyframes growAndRotateSpiral90 {
   from {
     -webkit-transform: scale(.01) rotate(0deg);

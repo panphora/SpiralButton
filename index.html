@@ -32,13 +32,14 @@
     </div>
     <div class="explanation">
       <h2>About</h2>
-      <p>I made Spiral Button for <a href="https://artisfy.com/">Artisfy</a>. I wanted a button that looked like a button and was genuinely fun to click on.</p>
-      <p>I'm releasing it to be freely used by anyone because I want to give back to the web community and see it improved upon.</p>
+      <p>I made Spiral Button for <a href="https://artisfy.com/">Artisfy</a>, a marketplace where anyone can hire and manage projects with digital artists.</p>
+      <p>I wanted to design a button that looked and functioned exactly like a button, while also being genuinely fun to click on.</p>
+      <p>I'm releasing it publicly, to be freely used by anyone, because I want to give back to the web community and see it improved upon.</p>
       <div class="readme-text">
         <h1 id="spiral-button">Spiral Button</h1>
 <p>A button that spirals with colors as it loads. </p>
 <h2 id="how-to-add-it-to-your-page">How to add it to your page</h2>
-<p>In order to use it on your page, include the <a href="https://panphora.github.io/SpiralButton/download/spiral-button.zip">minified files</a> on your page:</p>
+<p>In order to use it on your own page, first include the required <a href="https://panphora.github.io/SpiralButton/download/spiral-button.zip">css and js files</a>:</p>
 <pre><code class="lang-html">&lt;link rel=&quot;stylesheet&quot; href=&quot;css/spiral-button.min.css&quot;&gt;
 &lt;script src=&quot;js/spiral-button.min.js&quot;&gt;&lt;/script&gt;
 </code></pre>
@@ -46,33 +47,35 @@
 <pre><code class="lang-html">&lt;link rel=&quot;stylesheet&quot; href=&quot;https://cdn.jsdelivr.net/npm/spiral-button@1.0.0/dist/spiral-button.min.css&quot;&gt;
 &lt;script src=&quot;https://cdn.jsdelivr.net/npm/spiral-button@1.0.0/dist/spiral-button.min.js&quot;&gt;&lt;/script&gt;
 </code></pre>
-<h2 id="initialize-it-">Initialize it!</h2>
-<p>Call the <code>SpiralButton</code> method on any button elements or anchor tags you want to transform.</p>
+<h2 id="initialize-the-button-">Initialize the button!</h2>
+<p>After you&#39;ve added the source files, all you need to do is call the <code>SpiralButton</code> method on any button element or anchor tag that you want to transform.</p>
 <pre><code class="lang-html">&lt;button&gt;Send&lt;/button&gt;
 </code></pre>
 <pre><code class="lang-javascript">SpiralButton({
   buttonElement: document.querySelector(&quot;button&quot;)
 });
 </code></pre>
+<p>It will use the text inside the original button as the text for the Spiral Button (or you can pass in your own text using the <code>buttonText</code> option). Try to make this text less than 6 words long.</p>
 <h2 id="customize-it-with-a-color-scheme">Customize it with a color scheme</h2>
-<p>If you want to customize the colors, you can pass in a known color scheme:</p>
+<p>If you want to customize the colors of the inner spiral, you can pass in a known color scheme to the <code>colorScheme</code> option:</p>
 <pre><code class="lang-javascript">SpiralButton({
   buttonElement: document.querySelector(&quot;button&quot;),
   colorScheme: &quot;gold&quot;
 });
 </code></pre>
-<p>Play around and try and of the following: <code>gold</code>, <code>pinkAndBlue</code>, <code>fruity</code>, <code>oceanWave</code>, <code>green</code>, <code>rainbow</code>, <code>brightRainbow</code>, <code>red</code>, <code>woodCabin</code>, <code>watermelon</code>, <code>cyan</code>, <code>wildColors</code>, <code>oceanGrass</code>.</p>
-<p>A big thank you to the <a href="https://yeun.github.io/open-color/">Open Color</a> project for providing some excellent base colors for some of these schemes.</p>
-<h3 id="add-your-own-color-scheme">Add your own color scheme</h3>
-<p>You can also make up your own color scheme and pass it in as an array of seven colors:</p>
+<p>Here are all the available built-in color schemes: <code>gold</code>, <code>pinkAndBlue</code>, <code>fruity</code>, <code>oceanWave</code>, <code>green</code>, <code>rainbow</code>, <code>brightRainbow</code>, <code>red</code>, <code>woodCabin</code>, <code>watermelon</code>, <code>cyan</code>, <code>wildColors</code>, <code>oceanGrass</code>.</p>
+<p>A big thank you to the <a href="https://yeun.github.io/open-color/">Open Color</a> project for providing some excellent base colors for a few of these color schemes!</p>
+<h3 id="use-a-color-scheme-of-your-own">Use a color scheme of your own</h3>
+<p>You can also create your own color scheme by passing in an array of seven colors:</p>
 <pre><code class="lang-javascript">SpiralButton({
   buttonElement: document.querySelector(&quot;button&quot;),
-  // the following is the &#39;watermelon&#39; color scheme
+  // this is the &#39;watermelon&#39; color scheme:
   colorScheme: [&quot;#fa6a75&quot;,&quot;#fb838c&quot;,&quot;#fc9ba3&quot;,&quot;#fdb4ba&quot;,&quot;#3ED071&quot;,&quot;#67da8f&quot;,&quot;#90e4ad&quot;]
 });
 </code></pre>
+<p>If you come up with a great one, let me know, and I&#39;ll add it to the main plugin!</p>
 <h2 id="callbacks">Callbacks</h2>
-<p>Do you need to know when the button has just started animating? Use the <code>onStart</code> callback.</p>
+<p>If you need to know when the button starts animating, just use the <code>onStart</code> callback option:</p>
 <pre><code class="lang-javascript">SpiralButton({
   buttonElement: document.querySelector(&quot;button&quot;),
   onStart: function (buttonElement) {
@@ -80,7 +83,7 @@
   }
 });
 </code></pre>
-<p>And use the <code>onComplete</code> callback when you want to know when the spiral animation has run its course.</p>
+<p>And, if you want to know when the animation ends, use the <code>onComplete</code> callback option:</p>
 <pre><code class="lang-javascript">SpiralButton({
   buttonElement: document.querySelector(&quot;button&quot;),
   onComplete: function (buttonElement) {
@@ -89,14 +92,15 @@
 });
 </code></pre>
 <h2 id="custom-duration">Custom duration</h2>
-<p>You can specify the duration of the animation in <strong>milliseconds</strong> by passing in a number:</p>
+<p>You can modify the duration of the animation by passing in a number of <strong>milliseconds</strong>:</p>
 <pre><code class="lang-javascript">SpiralButton({
   buttonElement: document.querySelector(&quot;button&quot;),
   duration: 2000 // 2 seconds
 });
 </code></pre>
-<h2 id="custom-rotation">Custom rotation</h2>
-<p>You can specify a custom rotation for the spiral, but you have to choose from the following options: </p>
+<p>You can also use a string like <code>2s</code> or <code>1200ms</code> for this option.</p>
+<h2 id="custom-rotation-limited-">Custom rotation (limited)</h2>
+<p>You can specify a few custom rotations for the spiral. For right now, you have to choose from the following options:</p>
 <ul>
 <li><code>0</code></li>
 <li><code>90</code></li>
@@ -109,20 +113,37 @@
   rotation: 180
 });
 </code></pre>
-<p>The spiral will always rotate counter-clockwise. This can&#39;t be overrided unless you manually override the css (which shouldn&#39;t be that hard).</p>
+<p>The spiral will always rotate counter-clockwise. This can&#39;t be overrided unless you manually override the css.</p>
+<h2 id="manually-override-the-animation">Manually override the animation</h2>
+<p>By default, the background spiral animation happens on an svg element with the class <code>spiral-bg</code>. You can override this animation by specifying your own. As a template, you can use the default animation that Spiral Button uses:</p>
+<pre><code class="lang-css">@keyframes growAndRotateSpiral {
+  from {
+    transform: scale(.01) rotate(0deg);
+  }
+  to {
+    transform: scale(1) rotate(-90deg);
+  }
+}
+</code></pre>
+<p>Then attach it to the element like so:</p>
+<pre><code class="lang-css">.spiral-button.pressed .spiral-bg {
+  -webkit-animation: growAndRotateSpiral 1.5s cubic-bezier(0.55, 0.085, 0.68, 0.53);
+          animation: growAndRotateSpiral 1.5s cubic-bezier(0.55, 0.085, 0.68, 0.53);
+}
+</code></pre>
+<p>This will give you complete control over the animation, including the duration, the rotation, and the easing function.</p>
 <h2 id="known-issues">Known issues</h2>
 <ul>
-<li>Safari bug</li>
-<li>SVG legs don&#39;t move in IE</li>
-<li>Browser needs to support<ul>
-<li>classlist</li>
-<li>animations</li>
-<li>onanimationend callback</li>
+<li>Only supports modern browsers that have support for<ul>
+<li><code>Element.classList</code></li>
+<li>CSS3 Animations</li>
+<li>the <code>animationend</code> callback</li>
 </ul>
 </li>
 </ul>
+<p>Despite these issues, it works in IE11 because, while an SVG element is being animated, the underlying SVG paths are not. I&#39;m not sure about other version of IE.</p>
 <h2 id="request-for-help">Request for help</h2>
-<p>If you like this project, you can contribute by helping me add one of the following:</p>
+<p>If you like this project, you can contribute by helping me add one of the following features:</p>
 <ul>
 <li>Dynamically generated and inserted stylesheets <ul>
 <li>This will help us add any custom rotation </li>
@@ -133,6 +154,9 @@
 <li>Help fix the bug in Safari where the spiral shows up sometimes and sometimes it doesn&#39;t</li>
 </ul>
 <p>Your help is greatly appreciated!</p>
+<hr>
+<p>You can also help by going to <a href="https://artisfy.com/">Artisfy</a> and trying out the service for your own projects! </p>
+<p>Thank you!</p>
 
       </div>
     </div>
