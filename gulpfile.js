@@ -7,21 +7,21 @@ var gulp = require('gulp'),
   gfi = require("gulp-file-insert");
 
 
-gulp.task('default', ['clean', 'minify-js', 'minify-css', 'compileFrontPage']);
+gulp.task('default', ['minify-js', 'minify-css', 'compileFrontPage']);
 
 gulp.task('clean', function() {
   return gulp.src(['dist'], { read: false })
     .pipe(clean());
 });
 
-gulp.task('minify-js', function () {
+gulp.task('minify-js', ['clean'], function () {
   gulp.src('./src/spiral-button.js')
     .pipe(rename("spiral-button.min.js"))
     .pipe(uglify())
     .pipe(gulp.dest('./dist'));
 });
 
-gulp.task('minify-css', function () {
+gulp.task('minify-css', ['clean'], function () {
   gulp.src('./src/spiral-button.css') // path to your file
     .pipe(rename("spiral-button.min.css"))
     .pipe(minifyCss())
