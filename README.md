@@ -15,8 +15,8 @@ In order to use it on your own page, first include the required [css and js file
 You can also get them from the [jsDelivr](https://www.jsdelivr.com/) CDN:
 
 ```html
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/spiral-button@1.0.0/dist/spiral-button.min.css">
-<script src="https://cdn.jsdelivr.net/npm/spiral-button@1.0.0/dist/spiral-button.min.js"></script>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/spiral-button@1.0.1/dist/spiral-button.min.css">
+<script src="https://cdn.jsdelivr.net/npm/spiral-button@1.0.1/dist/spiral-button.min.js"></script>
 ```
 
 ## Initialize the button!
