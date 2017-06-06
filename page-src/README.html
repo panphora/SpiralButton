@@ -1,68 +1,92 @@
 <h1 id="spiral-button">Spiral Button</h1>
 <p>A button that spirals with colors as it loads. </p>
-<h2 id="how-to-add-it-to-your-page">How to add it to your page</h2>
-<p>In order to use it on your own page, first include the required <a href="https://panphora.github.io/SpiralButton/download/spiral-button.zip">css and js files</a>:</p>
+<h2 id="how-to-add-the-button-to-your-page">How to add the button to your page</h2>
+<p>In order to use it on your own page, include the required css and js files:</p>
 <pre><code class="lang-html">&lt;link rel=&quot;stylesheet&quot; href=&quot;css/spiral-button.min.css&quot;&gt;
 &lt;script src=&quot;js/spiral-button.min.js&quot;&gt;&lt;/script&gt;
 </code></pre>
-<p>You can also get them from the <a href="https://www.jsdelivr.com/">jsDelivr</a> CDN:</p>
-<pre><code class="lang-html">&lt;link rel=&quot;stylesheet&quot; href=&quot;https://cdn.jsdelivr.net/npm/spiral-button@1.0.0/dist/spiral-button.min.css&quot;&gt;
-&lt;script src=&quot;https://cdn.jsdelivr.net/npm/spiral-button@1.0.0/dist/spiral-button.min.js&quot;&gt;&lt;/script&gt;
+<p>You can download these files in <a href="https://panphora.github.io/SpiralButton/download/spiral-button.zip">this zip archive</a>.</p>
+<p>You can also link to them directly from the <a href="https://www.jsdelivr.com/">jsDelivr</a> CDN:</p>
+<pre><code class="lang-html">&lt;link rel=&quot;stylesheet&quot; href=&quot;https://cdn.jsdelivr.net/npm/spiral-button@1.0.1/dist/spiral-button.min.css&quot;&gt;
+&lt;script src=&quot;https://cdn.jsdelivr.net/npm/spiral-button@1.0.1/dist/spiral-button.min.js&quot;&gt;&lt;/script&gt;
 </code></pre>
 <h2 id="initialize-the-button-">Initialize the button!</h2>
-<p>After you&#39;ve added the source files, all you need to do is call the <code>SpiralButton</code> method on any button element or anchor tag that you want to transform.</p>
-<pre><code class="lang-html">&lt;button&gt;Send&lt;/button&gt;
+<p>After you&#39;ve added the source files, all you need to do is call the <code>SpiralButton</code> function on any element that you want to transform into a button.</p>
+<p>For an element like this:</p>
+<pre><code class="lang-html">&lt;button class=&quot;spiral-button&quot;&gt;Send&lt;/button&gt;
 </code></pre>
+<p>You could use JavaScript like this:</p>
 <pre><code class="lang-javascript">SpiralButton({
-  buttonElement: document.querySelector(&quot;button&quot;)
+  buttonElement: document.querySelector(&quot;.spiral-button&quot;)
 });
 </code></pre>
-<p>It will use the text inside the original button as the text for the Spiral Button (or you can pass in your own text using the <code>buttonText</code> option). Try to make this text less than 6 words long.</p>
-<h2 id="customize-it-with-a-color-scheme">Customize it with a color scheme</h2>
-<p>If you want to customize the colors of the inner spiral, you can pass in a known color scheme to the <code>colorScheme</code> option:</p>
+<p>It will use the text inside the element you call it on as the button text. Or, you can pass in a string directly using the <code>buttonText</code> option:</p>
 <pre><code class="lang-javascript">SpiralButton({
-  buttonElement: document.querySelector(&quot;button&quot;),
+  buttonElement: document.querySelector(&quot;.spiral-button&quot;),
+  buttonText: &quot;Send&quot;
+});
+</code></pre>
+<p>I&#39;d recommend using button text that&#39;s less than 6 words long because longer buttons can make the rotating spiral look too wide.</p>
+<h2 id="customize-your-button-with-a-color-scheme-">Customize your button with a color scheme!</h2>
+<p>If you want to customize the colors of the rotating spiral, you can pass in a built-in color scheme using the <code>colorScheme</code> option:</p>
+<pre><code class="lang-javascript">SpiralButton({
+  buttonElement: document.querySelector(&quot;.spiral-button&quot;),
   colorScheme: &quot;gold&quot;
 });
 </code></pre>
-<p>Here are all the available built-in color schemes: <code>gold</code>, <code>pinkAndBlue</code>, <code>fruity</code>, <code>oceanWave</code>, <code>green</code>, <code>rainbow</code>, <code>brightRainbow</code>, <code>red</code>, <code>woodCabin</code>, <code>watermelon</code>, <code>cyan</code>, <code>wildColors</code>, <code>oceanGrass</code>.</p>
-<p>A big thank you to the <a href="https://yeun.github.io/open-color/">Open Color</a> project for providing some excellent base colors for a few of these color schemes!</p>
-<h3 id="use-a-color-scheme-of-your-own">Use a color scheme of your own</h3>
-<p>You can also create your own color scheme by passing in an array of seven colors:</p>
+<p>Here are all the available built-in color schemes: </p>
+<ul>
+<li><code>gold</code></li>
+<li><code>pinkAndBlue</code></li>
+<li><code>fruity</code></li>
+<li><code>oceanWave</code></li>
+<li><code>green</code></li>
+<li><code>rainbow</code></li>
+<li><code>brightRainbow</code></li>
+<li><code>red</code></li>
+<li><code>woodCabin</code></li>
+<li><code>watermelon</code></li>
+<li><code>cyan</code></li>
+<li><code>wildColors</code></li>
+<li><code>oceanGrass</code></li>
+</ul>
+<p>A big thank you to the <a href="https://yeun.github.io/open-color/">Open Color</a> project for providing some excellent base colors for some of color schemes!</p>
+<h3 id="you-can-also-use-a-color-scheme-of-your-own">You can also use a color scheme of your own</h3>
+<p>Just pass in an array of seven colors to make your own color scheme:</p>
 <pre><code class="lang-javascript">SpiralButton({
-  buttonElement: document.querySelector(&quot;button&quot;),
+  buttonElement: document.querySelector(&quot;.spiral-button&quot;),
   // this is the &#39;watermelon&#39; color scheme:
   colorScheme: [&quot;#fa6a75&quot;,&quot;#fb838c&quot;,&quot;#fc9ba3&quot;,&quot;#fdb4ba&quot;,&quot;#3ED071&quot;,&quot;#67da8f&quot;,&quot;#90e4ad&quot;]
 });
 </code></pre>
-<p>If you come up with a great one, let me know, and I&#39;ll add it to the main plugin!</p>
+<p>If you come up with a color scheme that you really like, send it to me and I&#39;ll consider adding it as a built-in color scheme!</p>
 <h2 id="callbacks">Callbacks</h2>
-<p>If you need to know when the button starts animating, just use the <code>onStart</code> callback option:</p>
+<p>If your code needs to know as soon as the button starts animating, use the <code>onStart</code> callback option:</p>
 <pre><code class="lang-javascript">SpiralButton({
-  buttonElement: document.querySelector(&quot;button&quot;),
+  buttonElement: document.querySelector(&quot;.spiral-button&quot;),
   onStart: function (buttonElement) {
     // just starting to animate!
   }
 });
 </code></pre>
-<p>And, if you want to know when the animation ends, use the <code>onComplete</code> callback option:</p>
+<p>And, if you want to know exactly when the animation ends, use the <code>onComplete</code> callback option:</p>
 <pre><code class="lang-javascript">SpiralButton({
-  buttonElement: document.querySelector(&quot;button&quot;),
+  buttonElement: document.querySelector(&quot;.spiral-button&quot;),
   onComplete: function (buttonElement) {
     // the animation has just completed!
   }
 });
 </code></pre>
 <h2 id="custom-duration">Custom duration</h2>
-<p>You can modify the duration of the animation by passing in a number of <strong>milliseconds</strong>:</p>
+<p>You can modify the duration of the animation by passing in a number of <strong>milliseconds</strong> for it to run in:</p>
 <pre><code class="lang-javascript">SpiralButton({
-  buttonElement: document.querySelector(&quot;button&quot;),
+  buttonElement: document.querySelector(&quot;.spiral-button&quot;),
   duration: 2000 // 2 seconds
 });
 </code></pre>
-<p>You can also use a string like <code>2s</code> or <code>1200ms</code> for this option.</p>
+<p>You can also use a string like &quot;<code>2s</code>&quot; or &quot;<code>1200ms</code>&quot; for this option.</p>
 <h2 id="custom-rotation-limited-">Custom rotation (limited)</h2>
-<p>You can specify a few custom rotations for the spiral. For right now, you have to choose from the following options:</p>
+<p>You can specify a few custom rotations for the rotating spiral. As of the current version, you&#39;re limited to the following options:</p>
 <ul>
 <li><code>0</code></li>
 <li><code>90</code></li>
@@ -71,13 +95,14 @@
 <li><code>360</code></li>
 </ul>
 <pre><code class="lang-javascript">SpiralButton({
-  buttonElement: document.querySelector(&quot;button&quot;),
+  buttonElement: document.querySelector(&quot;.spiral-button&quot;),
   rotation: 180
 });
 </code></pre>
 <p>The spiral will always rotate counter-clockwise. This can&#39;t be overrided unless you manually override the css.</p>
-<h2 id="manually-override-the-animation">Manually override the animation</h2>
-<p>By default, the background spiral animation happens on an svg element with the class <code>spiral-bg</code>. You can override this animation by specifying your own. As a template, you can use the default animation that Spiral Button uses:</p>
+<h2 id="manually-overriding-the-animation-s-css">Manually overriding the animation&#39;s CSS</h2>
+<p>By default, the background spiral animation happens on an svg element that has the class &quot;<code>spiral-bg</code>&quot; on it. You can override this animation by specifying your own, if you want. </p>
+<p>As a starting template for this animation, you can use the default animation css that Spiral Button uses:</p>
 <pre><code class="lang-css">@keyframes growAndRotateSpiral {
   from {
     transform: scale(.01) rotate(0deg);
@@ -89,33 +114,31 @@
 </code></pre>
 <p>Then attach it to the element like so:</p>
 <pre><code class="lang-css">.spiral-button.pressed .spiral-bg {
-  -webkit-animation: growAndRotateSpiral 1.5s cubic-bezier(0.55, 0.085, 0.68, 0.53);
-          animation: growAndRotateSpiral 1.5s cubic-bezier(0.55, 0.085, 0.68, 0.53);
+  animation: growAndRotateSpiral 1.5s cubic-bezier(0.55, 0.085, 0.68, 0.53);
 }
 </code></pre>
 <p>This will give you complete control over the animation, including the duration, the rotation, and the easing function.</p>
+<p>Make sure you use an <a href="https://autoprefixer.github.io/">autoprefix tool</a> to generate all of the vendor prefixes for your animation and keyframe css.</p>
 <h2 id="known-issues">Known issues</h2>
+<p>Right now, there&#39;s only one outstanding issue: you must be using a fairly modern browser for it to work. Your browser must be able to support the following:</p>
 <ul>
-<li>Only supports modern browsers that have support for<ul>
 <li><code>Element.classList</code></li>
-<li>CSS3 Animations</li>
-<li>the <code>animationend</code> callback</li>
+<li><code>@keyframes</code> CSS3 animations</li>
+<li><code>animationend</code> callback</li>
 </ul>
-</li>
-</ul>
-<p>Despite these issues, it works in IE11 because, while an SVG element is being animated, the underlying SVG paths are not. I&#39;m not sure about other version of IE.</p>
-<h2 id="request-for-help">Request for help</h2>
-<p>If you like this project, you can contribute by helping me add one of the following features:</p>
+<p>Despite these issues, it works well in IE11. I&#39;m not sure about other version of IE yet. Please let me know.</p>
+<h2 id="contibutions-">Contibutions!</h2>
+<p>If you like this button, please consider contributing by adding ideas and code of your own. </p>
+<p>Some of the things on my todo list are the following features:</p>
 <ul>
 <li>Dynamically generated and inserted stylesheets <ul>
-<li>This will help us add any custom rotation </li>
-<li>This will also let us customize the animation&#39;s easing function</li>
+<li>This will help add <em>any</em> custom rotation </li>
+<li>This will help add <em>any</em> easing function</li>
 </ul>
 </li>
-<li>A curvier spiral svg (the current svg was traced in Illustrator and isn&#39;t a perfect spiral)</li>
-<li>Help fix the bug in Safari where the spiral shows up sometimes and sometimes it doesn&#39;t</li>
+<li>A less bumpy spiral svg image. The current spiral was traced by hand in Illustrator, so it&#39;s not a perfect spiral. You can tell if you zoom in a lot. I&#39;d love an SVG that was a perfect spiral. </li>
 </ul>
-<p>Your help is greatly appreciated!</p>
+<p>Any help is greatly appreciated!</p>
 <hr>
-<p>You can also help by going to <a href="https://artisfy.com/">Artisfy</a> and trying out the service for your own projects! </p>
+<p>You can also help by going to <a href="https://artisfy.com/">Artisfy</a> and using it to manage and commission high-quality digital artwork! </p>
 <p>Thank you!</p>
