@@ -1,6 +1,6 @@
 # Spiral Button
 
-This is a simple-looking button that spirals with multiple colors after it's clicked and while it loads. 
+A button that spirals with colors as it loads. 
 
 
 ## Add files to your page

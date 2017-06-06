@@ -2,7 +2,7 @@
   "name": "spiral-button",
   "title": "SpiralButton.js",
   "version": "1.0.0",
-  "description": "A button that spirals as it loads",
+  "description": "A button that spirals with colors as it loads.",
   "author": {
     "name": "David Miranda",
     "url": "http://davidmiranda.info"
@@ -14,6 +14,8 @@
   "devDependencies": {
     "gulp": "^3.8.0",
     "gulp-clean": "~0.2.4",
+    "gulp-file-insert": "^1.0.3",
+    "gulp-markdown": "^1.2.0",
     "gulp-minify-css": "^1.2.4",
     "gulp-rename": "^1.2.0",
     "gulp-uglify": "~0.3.0"

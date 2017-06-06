@@ -8,13 +8,14 @@ html {
 }
 
 body {
-  font-family: 'Delius Swash Caps', cursive;
-  text-align: center;
+  font-family: Arial, "Helvetica Neue", Helvetica, sans-serif;
 }
 
 .heading {
+  font-family: 'Delius Swash Caps', cursive;
   font-size: 54px;
   margin-bottom: 5rem;
+  text-align: center;
   color: #333;
 }
 
@@ -24,8 +25,11 @@ body {
 }
 
 .spiral-button {
-  font-family: Arial, "Helvetica Neue", Helvetica, sans-serif;
   font-size: 16px;
   margin-right: 1rem;
   margin-bottom: 2rem;
+}
+
+.spiral-buttons-container {
+  text-align: center;
 }
