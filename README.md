@@ -166,10 +166,9 @@ If you like this project, you can contribute by helping me add one of the follow
 - Dynamically generated and inserted stylesheets 
   - This will help us add any custom rotation 
   - This will also let us customize the animation's easing function
-- A curvier spiral svg (the current svg was traced in Illustrator and isn't a perfect spiral)
-- Help fix the bug in Safari where the spiral shows up sometimes and sometimes it doesn't
+- A curvier spiral svg that is very similar to the current one because the current svg was traced by hand in Illustrator and, as a result, isn't a perfect spiral
 
-Your help is greatly appreciated!
+Any help is greatly appreciated!
 
 ---
 
