@@ -1,7 +1,7 @@
 {
   "name": "spiral-button",
   "title": "SpiralButton.js",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "A button that spirals with colors as it loads.",
   "author": {
     "name": "David Miranda",
