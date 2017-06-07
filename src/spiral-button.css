@@ -132,8 +132,8 @@
 .spiral-button .leg-container.leg-top-right {
   top: 0px;
   right: 0px;
-  width: 8.8px;
-  height: 10.2px;
+  width: 9px;
+  height: 10px;
 }
 .spiral-button .leg-container.leg-top-right .leg {
   position: absolute;
@@ -147,8 +147,8 @@
 .spiral-button .leg-container.leg-bottom-right {
   bottom: 0px;
   right: 0px;
-  width: 8.8px;
-  height: 8.8px;
+  width: 9px;
+  height: 9px;
 }
 .spiral-button .leg-container.leg-bottom-right .leg {
   position: absolute;
@@ -162,8 +162,8 @@
 .spiral-button .leg-container.leg-bottom-left {
   bottom: 0px;
   left: 0px;
-  width: 10.2px;
-  height: 8.8px;
+  width: 10px;
+  height: 9px;
 }
 .spiral-button .leg-container.leg-bottom-left .leg {
   position: absolute;
@@ -218,18 +218,18 @@
 }
 
 .spiral-button.pressed .leg-top-right .leg {
-  -webkit-transform: translate(7px, 9px);
-          transform: translate(7px, 9px);
+  -webkit-transform: translate(8px, 10px);
+          transform: translate(8px, 10px);
 }
 
 .spiral-button.pressed .leg-bottom-right .leg {
-  -webkit-transform: translate(7px, 7px);
-          transform: translate(7px, 7px);
+  -webkit-transform: translate(9px, 9px);
+          transform: translate(9px, 9px);
 }
 
 .spiral-button.pressed .leg-bottom-left .leg {
-  -webkit-transform: translate(9px, 7px);
-          transform: translate(9px, 7px);
+  -webkit-transform: translate(10px, 8px);
+          transform: translate(10px, 8px);
 }
 
 .spiral-button.pressed .spiral-bg {
