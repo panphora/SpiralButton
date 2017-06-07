@@ -181,17 +181,6 @@ This will give you complete control over the animation, including the duration, 
 Make sure you use an [autoprefix tool](https://autoprefixer.github.io/) to generate all of the vendor prefixes for your animation and keyframe css.
 
 
-## Known issues
-
-Right now, there's only one outstanding issue: you must be using a fairly modern browser for it to work. Your browser must be able to support the following:
-
-- `Element.classList`
-- `@keyframes` CSS3 animations
-- `animationend` callback
-
-Despite these issues, it works well in IE11. I'm not sure about other version of IE yet. Please let me know.
-
-
 ## Contibutions!
 
 If you like this button, please consider contributing by adding ideas and code of your own. 
@@ -201,13 +190,11 @@ Some of the things on my todo list are the following features:
 - Dynamically generated and inserted stylesheets 
   - This will help add *any* custom rotation 
   - This will help add *any* easing function
-- A less bumpy spiral svg image. The current spiral was traced by hand in Illustrator, so it's not a perfect spiral. You can tell if you zoom in a lot. I'd love an SVG that was a perfect spiral. 
+- A smoother spiral image. 
+  - The current spiral was traced by hand in Illustrator, so it's not a perfect spiral. You can tell if you zoom into the SVG a lot. I'd love to have a perfect spiral, as an SVG image.
+- Fixing small visual glitches
+  - Sometimes the spiral's background covers up the button's right edge by an extra pixel.
+  - Sometimes the diagonal legs overflow their container by a pixel.
 
-Any help is greatly appreciated!
-
----
-
-You can also help by going to [Artisfy](https://artisfy.com/) and using it to manage and commission high-quality digital artwork! 
-
-Thank you!
+Any help you can offer would be greatly appreciated!
 
