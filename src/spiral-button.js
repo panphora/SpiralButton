@@ -94,14 +94,6 @@
     }
 
 
-    // Calculations for spiral size and position
-
-    var spiralButtonFaceOuterWidth = spiralButtonFaceContainerElem.offsetWidth;
-    var spiralButtonFaceOuterHeight = spiralButtonFaceContainerElem.offsetHeight;
-    var desiredTunnelExitWidth = spiralButtonFaceOuterWidth + 28; // should range from 100 to 400 if text is 1-5 words
-    var initialSpiralBgSize = (desiredTunnelExitWidth * (20/3)); // should range from 5px to 17px depending on text length
-
-
     // Get animation duration
 
     duration = getAnimationDurationString(duration);
@@ -110,17 +102,14 @@
     var durationString = durationWebkit + durationUnprefixed;
 
 
-    // Spiral size adapts to text size & spiral svg is centered over the button's face  
+    // Set spiral size and position
 
-    var cssTextArr = [
-      "width: " + initialSpiralBgSize + "px; ",
-      "height: " + initialSpiralBgSize + "px; ",
-      "left: " + (spiralButtonFaceOuterWidth/2 - initialSpiralBgSize/2) + "px; ",
-      "top: " + (spiralButtonFaceOuterHeight/2 - initialSpiralBgSize/2) + "px; ",
-      durationString
-    ];
+    setSpiralSizeAndPosition(spiralBgElem, spiralButtonFaceContainerElem, durationString);
 
-    spiralBgElem.style.cssText += cssTextArr.join("");
+    // recenters spirals in case it's off a little when the page first loads due to fonts not being fully loaded yet
+    window.addEventListener('load', function () {
+      setSpiralSizeAndPosition(spiralBgElem, spiralButtonFaceContainerElem, durationString);
+    });
 
 
     // Start & End Events
@@ -175,6 +164,28 @@
 
 
   // Utility functions -- todo move these outside of SpiralButton function
+
+  function setSpiralSizeAndPosition (spiralBgElem, spiralButtonFaceContainerElem, durationString) {
+    // Calculations for spiral size and position
+
+    var spiralButtonFaceOuterWidth = spiralButtonFaceContainerElem.offsetWidth;
+    var spiralButtonFaceOuterHeight = spiralButtonFaceContainerElem.offsetHeight;
+    var desiredTunnelExitWidth = spiralButtonFaceOuterWidth + 28; // should range from 100 to 400 if text is 1-5 words
+    var initialSpiralBgSize = (desiredTunnelExitWidth * (20/3)); // should range from 5px to 17px depending on text length
+
+
+    // Spiral size adapts to text size & spiral svg is centered over the button's face  
+
+    var cssTextArr = [
+      "width: " + initialSpiralBgSize + "px; ",
+      "height: " + initialSpiralBgSize + "px; ",
+      "left: " + (spiralButtonFaceOuterWidth/2 - initialSpiralBgSize/2) + "px; ",
+      "top: " + (spiralButtonFaceOuterHeight/2 - initialSpiralBgSize/2) + "px; ",
+      durationString
+    ];
+
+    spiralBgElem.style.cssText += cssTextArr.join("");
+  }
 
   function onCSSAnimationEnd (element, callback) {
     element.addEventListener('webkitAnimationEnd', callback);
