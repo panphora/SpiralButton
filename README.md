@@ -17,8 +17,8 @@ You can download these files in [this zip archive](https://panphora.github.io/Sp
 You can also link to them directly from the [jsDelivr](https://www.jsdelivr.com/) CDN:
 
 ```html
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/spiral-button@1.0.2/dist/spiral-button.min.css">
-<script src="https://cdn.jsdelivr.net/npm/spiral-button@1.0.2/dist/spiral-button.min.js"></script>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/spiral-button@1.0.3/dist/spiral-button.min.css">
+<script src="https://cdn.jsdelivr.net/npm/spiral-button@1.0.3/dist/spiral-button.min.js"></script>
 ```
 
 ## Initialize the button!

@@ -10,7 +10,7 @@ var gulp = require("gulp"),
 gulp.task("default", ["watch"]);
 
 gulp.task("watch", function () {
-  gulp.watch(["src/**/*.{css,js}", "page-src/index.html"], ["minify-js", "minify-css", "compileFrontPage"]);
+  gulp.watch(["src/**/*.{css,js}", "page-src/index.html", "README.md"], ["minify-js", "minify-css", "compileFrontPage"]);
 });
 
 gulp.task("clean", function() {
