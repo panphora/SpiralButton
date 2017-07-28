@@ -17,8 +17,8 @@ You can download these files in [this zip archive](https://panphora.github.io/Sp
 You can also link to them directly from the [jsDelivr](https://www.jsdelivr.com/) CDN:
 
 ```html
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/spiral-button@1.0.3/dist/spiral-button.min.css">
-<script src="https://cdn.jsdelivr.net/npm/spiral-button@1.0.3/dist/spiral-button.min.js"></script>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/spiral-button@1.0.4/dist/spiral-button.min.css">
+<script src="https://cdn.jsdelivr.net/npm/spiral-button@1.0.4/dist/spiral-button.min.js"></script>
 ```
 
 ## Initialize the button!
@@ -188,12 +188,7 @@ If you like this button, please consider contributing by adding ideas and code o
 Some of the things on my todo list are the following features:
 
 - Dynamically generated and inserted stylesheets 
-  - This will help add *any* custom rotation 
-  - This will help add *any* easing function
-- A smoother spiral image. 
-  - The current spiral was traced by hand in Illustrator, so it's not a perfect spiral. You can tell if you zoom into the SVG a lot. I'd love to have a perfect spiral, as an SVG image.
-- Fixing small visual glitches
-  - Sometimes the rotating spiral animation covers up the button's right edge by an extra pixel, making the right edge of the button appear 1px wide instead of 2px wide
+  - This let users specify *any* custom rotation or easing function
 
 Any help you can offer would be greatly appreciated!
 
