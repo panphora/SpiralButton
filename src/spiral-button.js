@@ -114,7 +114,7 @@
 
     // Start & End Events
 
-    onCSSAnimationEnd(spiralBgElem, function (event) {
+    function callWhenAnimationEnds (event) {
       var animationName = event && event.animationName;
 
       if (animationName && animationName.indexOf("growAndRotateSpiral") >= 0) {
@@ -128,7 +128,8 @@
           returnObjectMethods.onComplete(buttonElement);
         }
       }
-    });
+    }
+    onCSSAnimationEnd(spiralBgElem, callWhenAnimationEnds);
 
     buttonElement.addEventListener("click", function (event) {
       event.preventDefault();
@@ -144,6 +145,16 @@
 
       if (returnObjectMethods.onStart) {
         returnObjectMethods.onStart(buttonElement);
+      }
+
+      // in the case animation end event isn't supported:
+      var animationEndEventName = getAnimationEndEventName();
+      if (!animationEndEventName) {
+        // duration could be 100ms or 1s here
+        var durationIsInMilliseconds = duration.indexOf("ms") >= 0;
+        var durationAsANumber = parseInt(duration, 10);
+        var durationAsMilliseconds = durationIsInMilliseconds ? durationAsANumber : durationAsANumber * 1000;
+        setTimeout(callWhenAnimationEnds, durationAsMilliseconds);
       }
     }
 
@@ -188,8 +199,11 @@
   }
 
   function onCSSAnimationEnd (element, callback) {
-    element.addEventListener('webkitAnimationEnd', callback);
-    element.addEventListener('animationend', callback);
+    var animationEndEventName = getAnimationEndEventName();
+
+    if (animationEndEventName) {
+      element.addEventListener(animationEndEventName, callback);
+    }
   }
 
   function getAnimationDurationString (duration) {
@@ -202,6 +216,25 @@
     }
 
     return duration;
+  }
+
+  function getAnimationEndEventName () {
+    var el = document.createElement('div');
+
+    var animationEndEventNames = {
+      animation       : 'animationend',
+      WebkitAnimation : 'webkitAnimationEnd',
+      MozAnimation    : 'mozAnimationEnd',
+      OAnimation      : 'oAnimationEnd oanimationend'
+    };
+
+    for (var name in animationEndEventNames) {
+      if (el.style[name] !== undefined) {
+        return animationEndEventNames[name];
+      }
+    }
+
+    return false; // explicit for ie8
   }
 
   return SpiralButton;
