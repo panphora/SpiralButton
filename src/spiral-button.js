@@ -132,7 +132,6 @@
     onCSSAnimationEnd(spiralBgElem, callWhenAnimationEnds);
 
     buttonElement.addEventListener("click", function (event) {
-      event.preventDefault();
       onButtonClick();
     });
 
