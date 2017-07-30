@@ -83,8 +83,9 @@
 }
 
 .spiral-button .spiral-button-face-background-container {
-  overflow: hidden;
+  display: block;
   position: absolute;
+  overflow: hidden;
   top: 0;
   left: 0;
   width: 100%;
@@ -92,6 +93,7 @@
 }
 
 .spiral-button .spiral-button-bottom {
+  display: block;
   position: absolute;
   right: 0px;
   bottom: 0px;
@@ -116,6 +118,7 @@
 /* SVG ELEMENTS: LEGS */
 
 .spiral-button .legs-container {
+  display: block;
   position: absolute;
   top: 0;
   left: 0;
@@ -124,6 +127,7 @@
 }
 
 .spiral-button .leg-container {
+  display: block;
   position: absolute;
   overflow: hidden;
 }
